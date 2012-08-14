@@ -7,66 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		459E8A0115DA112400460A8B /* CContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 459E8A0015DA112400460A8B /* CContainerView.m */; };
-		459FE7E315D8BB0600D1CDA1 /* NSURL+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 459FE7E215D8BB0600D1CDA1 /* NSURL+Extensions.m */; };
-		459FE7E815D8CE8E00D1CDA1 /* CTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459FE7E615D8CE8E00D1CDA1 /* CTimelineViewController.m */; };
-		459FE7E915D8CE8E00D1CDA1 /* CTimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 459FE7E715D8CE8E00D1CDA1 /* CTimelineViewController.xib */; };
-		459FE7EC15D8D4E200D1CDA1 /* CArrayMergeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 459FE7EB15D8D4E200D1CDA1 /* CArrayMergeHelper.m */; };
-		459FE7EF15D8DB4500D1CDA1 /* NSArray_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 459FE7EE15D8D4F600D1CDA1 /* NSArray_Extensions.m */; };
+		4520B31015DA28E500B81172 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4520B2EC15DA28E500B81172 /* Credits.rtf */; };
+		4520B31115DA28E500B81172 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4520B2EE15DA28E500B81172 /* InfoPlist.strings */; };
+		4520B31215DA28E500B81172 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520B2F215DA28E500B81172 /* MainMenu.xib */; };
+		4520B31415DA28E500B81172 /* CAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B2F715DA28E500B81172 /* CAppDelegate.m */; };
+		4520B31515DA28E500B81172 /* CAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B2F915DA28E500B81172 /* CAuthenticationViewController.m */; };
+		4520B31615DA28E500B81172 /* CAuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520B2FA15DA28E500B81172 /* CAuthenticationViewController.xib */; };
+		4520B31715DA28E500B81172 /* CMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B2FC15DA28E500B81172 /* CMainWindowController.m */; };
+		4520B31815DA28E500B81172 /* CTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B2FE15DA28E500B81172 /* CTimelineViewController.m */; };
+		4520B31915DA28E500B81172 /* CTimelineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520B2FF15DA28E500B81172 /* CTimelineViewController.xib */; };
+		4520B31B15DA28E500B81172 /* App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4520B30215DA28E500B81172 /* App.xcdatamodeld */; };
+		4520B31C15DA28E500B81172 /* CAppService.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B30515DA28E500B81172 /* CAppService.m */; };
+		4520B31D15DA28E500B81172 /* CArrayMergeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B30915DA28E500B81172 /* CArrayMergeHelper.m */; };
+		4520B31E15DA28E500B81172 /* CContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B30B15DA28E500B81172 /* CContainerView.m */; };
+		4520B31F15DA28E500B81172 /* NSArray_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B30D15DA28E500B81172 /* NSArray_Extensions.m */; };
+		4520B32015DA28E500B81172 /* NSURL+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B30F15DA28E500B81172 /* NSURL+Extensions.m */; };
+		4520B32215DA290200B81172 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520B32115DA290200B81172 /* MainWindow.xib */; };
+		4520B32415DA293C00B81172 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B32315DA293C00B81172 /* main.m */; };
 		45DAA30E15D8B26300459C51 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA30D15D8B26300459C51 /* Cocoa.framework */; };
-		45DAA31815D8B26300459C51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45DAA31615D8B26300459C51 /* InfoPlist.strings */; };
-		45DAA31A15D8B26300459C51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAA31915D8B26300459C51 /* main.m */; };
-		45DAA31E15D8B26300459C51 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 45DAA31C15D8B26300459C51 /* Credits.rtf */; };
-		45DAA32115D8B26300459C51 /* CAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAA32015D8B26300459C51 /* CAppDelegate.m */; };
-		45DAA32415D8B26400459C51 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45DAA32215D8B26400459C51 /* MainMenu.xib */; };
-		45DAA32715D8B26400459C51 /* App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45DAA32515D8B26400459C51 /* App.xcdatamodeld */; };
-		45DAA35215D8B33200459C51 /* CAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAA35015D8B33200459C51 /* CAuthenticationViewController.m */; };
-		45DAA35315D8B33200459C51 /* CAuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45DAA35115D8B33200459C51 /* CAuthenticationViewController.xib */; };
-		45DAA35815D8B42F00459C51 /* CMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAA35715D8B42F00459C51 /* CMainWindowController.m */; };
-		45DAA35A15D8B4C500459C51 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45DAA35915D8B4C500459C51 /* MainWindow.xib */; };
 		45DAA35B15D8B61E00459C51 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA35415D8B3AE00459C51 /* WebKit.framework */; };
-		45DAA35E15D8B70700459C51 /* CAppService.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAA35D15D8B70700459C51 /* CAppService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		459E89FF15DA112400460A8B /* CContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CContainerView.h; sourceTree = "<group>"; };
-		459E8A0015DA112400460A8B /* CContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CContainerView.m; sourceTree = "<group>"; };
-		459FE7E115D8BB0600D1CDA1 /* NSURL+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Extensions.h"; sourceTree = "<group>"; };
-		459FE7E215D8BB0600D1CDA1 /* NSURL+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Extensions.m"; sourceTree = "<group>"; };
-		459FE7E515D8CE8E00D1CDA1 /* CTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTimelineViewController.h; sourceTree = "<group>"; };
-		459FE7E615D8CE8E00D1CDA1 /* CTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTimelineViewController.m; sourceTree = "<group>"; };
-		459FE7E715D8CE8E00D1CDA1 /* CTimelineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CTimelineViewController.xib; sourceTree = "<group>"; };
-		459FE7EA15D8D4E200D1CDA1 /* CArrayMergeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CArrayMergeHelper.h; sourceTree = "<group>"; };
-		459FE7EB15D8D4E200D1CDA1 /* CArrayMergeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CArrayMergeHelper.m; sourceTree = "<group>"; };
-		459FE7ED15D8D4F600D1CDA1 /* NSArray_Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSArray_Extensions.h; sourceTree = "<group>"; };
-		459FE7EE15D8D4F600D1CDA1 /* NSArray_Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSArray_Extensions.m; sourceTree = "<group>"; };
+		4520B2ED15DA28E500B81172 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		4520B2EF15DA28E500B81172 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4520B2F315DA28E500B81172 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4520B2F415DA28E500B81172 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4520B2F615DA28E500B81172 /* CAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAppDelegate.h; sourceTree = "<group>"; };
+		4520B2F715DA28E500B81172 /* CAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAppDelegate.m; sourceTree = "<group>"; };
+		4520B2F815DA28E500B81172 /* CAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAuthenticationViewController.h; sourceTree = "<group>"; };
+		4520B2F915DA28E500B81172 /* CAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAuthenticationViewController.m; sourceTree = "<group>"; };
+		4520B2FA15DA28E500B81172 /* CAuthenticationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CAuthenticationViewController.xib; sourceTree = "<group>"; };
+		4520B2FB15DA28E500B81172 /* CMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMainWindowController.h; sourceTree = "<group>"; };
+		4520B2FC15DA28E500B81172 /* CMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMainWindowController.m; sourceTree = "<group>"; };
+		4520B2FD15DA28E500B81172 /* CTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTimelineViewController.h; sourceTree = "<group>"; };
+		4520B2FE15DA28E500B81172 /* CTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTimelineViewController.m; sourceTree = "<group>"; };
+		4520B2FF15DA28E500B81172 /* CTimelineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CTimelineViewController.xib; sourceTree = "<group>"; };
+		4520B30315DA28E500B81172 /* App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = App.xcdatamodel; sourceTree = "<group>"; };
+		4520B30415DA28E500B81172 /* CAppService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAppService.h; sourceTree = "<group>"; };
+		4520B30515DA28E500B81172 /* CAppService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAppService.m; sourceTree = "<group>"; };
+		4520B30615DA28E500B81172 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		4520B30815DA28E500B81172 /* CArrayMergeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CArrayMergeHelper.h; sourceTree = "<group>"; };
+		4520B30915DA28E500B81172 /* CArrayMergeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CArrayMergeHelper.m; sourceTree = "<group>"; };
+		4520B30A15DA28E500B81172 /* CContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CContainerView.h; sourceTree = "<group>"; };
+		4520B30B15DA28E500B81172 /* CContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CContainerView.m; sourceTree = "<group>"; };
+		4520B30C15DA28E500B81172 /* NSArray_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArray_Extensions.h; sourceTree = "<group>"; };
+		4520B30D15DA28E500B81172 /* NSArray_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArray_Extensions.m; sourceTree = "<group>"; };
+		4520B30E15DA28E500B81172 /* NSURL+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Extensions.h"; sourceTree = "<group>"; };
+		4520B30F15DA28E500B81172 /* NSURL+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Extensions.m"; sourceTree = "<group>"; };
+		4520B32115DA290200B81172 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		4520B32315DA293C00B81172 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		45DAA30915D8B26300459C51 /* AppFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DAA30D15D8B26300459C51 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		45DAA31015D8B26300459C51 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		45DAA31115D8B26300459C51 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		45DAA31215D8B26300459C51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		45DAA31515D8B26300459C51 /* AppFeed-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppFeed-Info.plist"; sourceTree = "<group>"; };
-		45DAA31715D8B26300459C51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		45DAA31915D8B26300459C51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		45DAA31B15D8B26300459C51 /* AppFeed-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppFeed-Prefix.pch"; sourceTree = "<group>"; };
-		45DAA31D15D8B26300459C51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		45DAA31F15D8B26300459C51 /* CAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAppDelegate.h; sourceTree = "<group>"; };
-		45DAA32015D8B26300459C51 /* CAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAppDelegate.m; sourceTree = "<group>"; };
-		45DAA32315D8B26400459C51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		45DAA32615D8B26400459C51 /* App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = App.xcdatamodel; sourceTree = "<group>"; };
 		45DAA33015D8B26400459C51 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		45DAA33215D8B26400459C51 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		45DAA33415D8B26400459C51 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		45DAA33615D8B26400459C51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		45DAA34F15D8B33200459C51 /* CAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAuthenticationViewController.h; sourceTree = "<group>"; };
-		45DAA35015D8B33200459C51 /* CAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAuthenticationViewController.m; sourceTree = "<group>"; };
-		45DAA35115D8B33200459C51 /* CAuthenticationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CAuthenticationViewController.xib; sourceTree = "<group>"; };
 		45DAA35415D8B3AE00459C51 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		45DAA35615D8B42F00459C51 /* CMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMainWindowController.h; sourceTree = "<group>"; };
-		45DAA35715D8B42F00459C51 /* CMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMainWindowController.m; sourceTree = "<group>"; };
-		45DAA35915D8B4C500459C51 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		45DAA35C15D8B70700459C51 /* CAppService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAppService.h; sourceTree = "<group>"; };
-		45DAA35D15D8B70700459C51 /* CAppService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAppService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +82,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4520B2EA15DA28E500B81172 /* AppFeed */ = {
+			isa = PBXGroup;
+			children = (
+				4520B2F515DA28E500B81172 /* Source */,
+				4520B2EB15DA28E500B81172 /* Resources */,
+			);
+			path = AppFeed;
+			sourceTree = "<group>";
+		};
+		4520B2EB15DA28E500B81172 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4520B32115DA290200B81172 /* MainWindow.xib */,
+				4520B2EC15DA28E500B81172 /* Credits.rtf */,
+				4520B2EE15DA28E500B81172 /* InfoPlist.strings */,
+				4520B2F215DA28E500B81172 /* MainMenu.xib */,
+				4520B2F415DA28E500B81172 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4520B2F515DA28E500B81172 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				4520B32315DA293C00B81172 /* main.m */,
+				4520B2F615DA28E500B81172 /* CAppDelegate.h */,
+				4520B2F715DA28E500B81172 /* CAppDelegate.m */,
+				4520B2F815DA28E500B81172 /* CAuthenticationViewController.h */,
+				4520B2F915DA28E500B81172 /* CAuthenticationViewController.m */,
+				4520B2FA15DA28E500B81172 /* CAuthenticationViewController.xib */,
+				4520B2FB15DA28E500B81172 /* CMainWindowController.h */,
+				4520B2FC15DA28E500B81172 /* CMainWindowController.m */,
+				4520B2FD15DA28E500B81172 /* CTimelineViewController.h */,
+				4520B2FE15DA28E500B81172 /* CTimelineViewController.m */,
+				4520B2FF15DA28E500B81172 /* CTimelineViewController.xib */,
+				4520B30115DA28E500B81172 /* Model */,
+				4520B30615DA28E500B81172 /* Prefix.pch */,
+				4520B30715DA28E500B81172 /* Support */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		4520B30115DA28E500B81172 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4520B30215DA28E500B81172 /* App.xcdatamodeld */,
+				4520B30415DA28E500B81172 /* CAppService.h */,
+				4520B30515DA28E500B81172 /* CAppService.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4520B30715DA28E500B81172 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				4520B30815DA28E500B81172 /* CArrayMergeHelper.h */,
+				4520B30915DA28E500B81172 /* CArrayMergeHelper.m */,
+				4520B30A15DA28E500B81172 /* CContainerView.h */,
+				4520B30B15DA28E500B81172 /* CContainerView.m */,
+				4520B30C15DA28E500B81172 /* NSArray_Extensions.h */,
+				4520B30D15DA28E500B81172 /* NSArray_Extensions.m */,
+				4520B30E15DA28E500B81172 /* NSURL+Extensions.h */,
+				4520B30F15DA28E500B81172 /* NSURL+Extensions.m */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		45DAA2FE15D8B26300459C51 = {
 			isa = PBXGroup;
 			children = (
-				45DAA31315D8B26300459C51 /* App */,
+				4520B2EA15DA28E500B81172 /* AppFeed */,
 				45DAA30C15D8B26300459C51 /* Frameworks */,
 				45DAA30A15D8B26300459C51 /* Products */,
 			);
@@ -121,49 +188,6 @@
 				45DAA31215D8B26300459C51 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		45DAA31315D8B26300459C51 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				45DAA31F15D8B26300459C51 /* CAppDelegate.h */,
-				45DAA32015D8B26300459C51 /* CAppDelegate.m */,
-				45DAA32215D8B26400459C51 /* MainMenu.xib */,
-				45DAA35615D8B42F00459C51 /* CMainWindowController.h */,
-				45DAA35715D8B42F00459C51 /* CMainWindowController.m */,
-				45DAA35915D8B4C500459C51 /* MainWindow.xib */,
-				45DAA34F15D8B33200459C51 /* CAuthenticationViewController.h */,
-				45DAA35015D8B33200459C51 /* CAuthenticationViewController.m */,
-				45DAA35115D8B33200459C51 /* CAuthenticationViewController.xib */,
-				459FE7E515D8CE8E00D1CDA1 /* CTimelineViewController.h */,
-				459FE7E615D8CE8E00D1CDA1 /* CTimelineViewController.m */,
-				459FE7E715D8CE8E00D1CDA1 /* CTimelineViewController.xib */,
-				45DAA35C15D8B70700459C51 /* CAppService.h */,
-				45DAA35D15D8B70700459C51 /* CAppService.m */,
-				45DAA32515D8B26400459C51 /* App.xcdatamodeld */,
-				459FE7E115D8BB0600D1CDA1 /* NSURL+Extensions.h */,
-				459FE7E215D8BB0600D1CDA1 /* NSURL+Extensions.m */,
-				459FE7EA15D8D4E200D1CDA1 /* CArrayMergeHelper.h */,
-				459FE7EB15D8D4E200D1CDA1 /* CArrayMergeHelper.m */,
-				459FE7ED15D8D4F600D1CDA1 /* NSArray_Extensions.h */,
-				459FE7EE15D8D4F600D1CDA1 /* NSArray_Extensions.m */,
-				459E89FF15DA112400460A8B /* CContainerView.h */,
-				459E8A0015DA112400460A8B /* CContainerView.m */,
-				45DAA31415D8B26300459C51 /* Supporting Files */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		45DAA31415D8B26300459C51 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				45DAA31515D8B26300459C51 /* AppFeed-Info.plist */,
-				45DAA31615D8B26300459C51 /* InfoPlist.strings */,
-				45DAA31915D8B26300459C51 /* main.m */,
-				45DAA31B15D8B26300459C51 /* AppFeed-Prefix.pch */,
-				45DAA31C15D8B26300459C51 /* Credits.rtf */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,12 +242,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45DAA31815D8B26300459C51 /* InfoPlist.strings in Resources */,
-				45DAA31E15D8B26300459C51 /* Credits.rtf in Resources */,
-				45DAA32415D8B26400459C51 /* MainMenu.xib in Resources */,
-				45DAA35315D8B33200459C51 /* CAuthenticationViewController.xib in Resources */,
-				45DAA35A15D8B4C500459C51 /* MainWindow.xib in Resources */,
-				459FE7E915D8CE8E00D1CDA1 /* CTimelineViewController.xib in Resources */,
+				4520B31015DA28E500B81172 /* Credits.rtf in Resources */,
+				4520B31115DA28E500B81172 /* InfoPlist.strings in Resources */,
+				4520B31215DA28E500B81172 /* MainMenu.xib in Resources */,
+				4520B31615DA28E500B81172 /* CAuthenticationViewController.xib in Resources */,
+				4520B31915DA28E500B81172 /* CTimelineViewController.xib in Resources */,
+				4520B32215DA290200B81172 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,43 +258,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45DAA31A15D8B26300459C51 /* main.m in Sources */,
-				45DAA32115D8B26300459C51 /* CAppDelegate.m in Sources */,
-				45DAA32715D8B26400459C51 /* App.xcdatamodeld in Sources */,
-				45DAA35215D8B33200459C51 /* CAuthenticationViewController.m in Sources */,
-				45DAA35815D8B42F00459C51 /* CMainWindowController.m in Sources */,
-				45DAA35E15D8B70700459C51 /* CAppService.m in Sources */,
-				459FE7E315D8BB0600D1CDA1 /* NSURL+Extensions.m in Sources */,
-				459FE7E815D8CE8E00D1CDA1 /* CTimelineViewController.m in Sources */,
-				459FE7EC15D8D4E200D1CDA1 /* CArrayMergeHelper.m in Sources */,
-				459FE7EF15D8DB4500D1CDA1 /* NSArray_Extensions.m in Sources */,
-				459E8A0115DA112400460A8B /* CContainerView.m in Sources */,
+				4520B31415DA28E500B81172 /* CAppDelegate.m in Sources */,
+				4520B31515DA28E500B81172 /* CAuthenticationViewController.m in Sources */,
+				4520B31715DA28E500B81172 /* CMainWindowController.m in Sources */,
+				4520B31815DA28E500B81172 /* CTimelineViewController.m in Sources */,
+				4520B31B15DA28E500B81172 /* App.xcdatamodeld in Sources */,
+				4520B31C15DA28E500B81172 /* CAppService.m in Sources */,
+				4520B31D15DA28E500B81172 /* CArrayMergeHelper.m in Sources */,
+				4520B31E15DA28E500B81172 /* CContainerView.m in Sources */,
+				4520B31F15DA28E500B81172 /* NSArray_Extensions.m in Sources */,
+				4520B32015DA28E500B81172 /* NSURL+Extensions.m in Sources */,
+				4520B32415DA293C00B81172 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		45DAA31615D8B26300459C51 /* InfoPlist.strings */ = {
+		4520B2EC15DA28E500B81172 /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				45DAA31715D8B26300459C51 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		45DAA31C15D8B26300459C51 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45DAA31D15D8B26300459C51 /* en */,
+				4520B2ED15DA28E500B81172 /* en */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
-		45DAA32215D8B26400459C51 /* MainMenu.xib */ = {
+		4520B2EE15DA28E500B81172 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				45DAA32315D8B26400459C51 /* en */,
+				4520B2EF15DA28E500B81172 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4520B2F215DA28E500B81172 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4520B2F315DA28E500B81172 /* en */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -336,8 +360,8 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "App/AppFeed-Prefix.pch";
-				INFOPLIST_FILE = "App/AppFeed-Info.plist";
+				GCC_PREFIX_HEADER = AppFeed/Source/Prefix.pch;
+				INFOPLIST_FILE = AppFeed/Resources/Info.plist;
 				PRODUCT_NAME = AppFeed;
 				WRAPPER_EXTENSION = app;
 			};
@@ -348,8 +372,8 @@
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "App/AppFeed-Prefix.pch";
-				INFOPLIST_FILE = "App/AppFeed-Info.plist";
+				GCC_PREFIX_HEADER = AppFeed/Source/Prefix.pch;
+				INFOPLIST_FILE = AppFeed/Resources/Info.plist;
 				PRODUCT_NAME = AppFeed;
 				WRAPPER_EXTENSION = app;
 			};
@@ -379,12 +403,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		45DAA32515D8B26400459C51 /* App.xcdatamodeld */ = {
+		4520B30215DA28E500B81172 /* App.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				45DAA32615D8B26400459C51 /* App.xcdatamodel */,
+				4520B30315DA28E500B81172 /* App.xcdatamodel */,
 			);
-			currentVersion = 45DAA32615D8B26400459C51 /* App.xcdatamodel */;
+			currentVersion = 4520B30315DA28E500B81172 /* App.xcdatamodel */;
 			path = App.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
