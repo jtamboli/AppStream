@@ -17,8 +17,6 @@ A minimal Mac OS X app.net client
 ## GOALS
 
 * I want to make a stable featureful app.net client that works _really_ well in full screen mode. Whether this means multiple column (tweetdeck style but less shit) or not is up for debate
-* Use the Latent Semantic Mapping framework to classify posts
-* Intelligently handle hashtags, usernames, urls etc - provide popover contextual info/actions on these item, e.g. hashtags popover will have a "view all posts with this hashtag" action.
 
 ## TODO/BUGS
 
@@ -32,6 +30,15 @@ A minimal Mac OS X app.net client
 * Database will grow and grow. Need to prune at some point.
 * Refresh
 * Code is being "sketched out" and is far from well designed. Expect a lot of churn/refactoring
+
+## FEARURE IDEAS
+* Use the Latent Semantic Mapping framework to classify posts
+* Intelligently handle hashtags, usernames, urls etc - provide popover contextual info/actions on these item, e.g. hashtags popover will have a "view all posts with this hashtag" action.
+* Markdown support
+* built in filtering, blocking, spam control and triggered actions
+* relying on server to fix spam problem is foolish
+* actions include user notifications, scripts?
+* built in fav star style functionality
 
 ## LICENSE
 
