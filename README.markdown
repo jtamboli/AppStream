@@ -31,7 +31,7 @@ A minimal Mac OS X app.net client
 * Refresh
 * Code is being "sketched out" and is far from well designed. Expect a lot of churn/refactoring
 
-## FEARURE IDEAS
+## FEATURE IDEAS
 * Use the Latent Semantic Mapping framework to classify posts
 * Intelligently handle hashtags, usernames, urls etc - provide popover contextual info/actions on these item, e.g. hashtags popover will have a "view all posts with this hashtag" action.
 * Markdown support
