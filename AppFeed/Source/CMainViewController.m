@@ -41,6 +41,8 @@
     NSArray *thePrototypes = @[
         @{ @"name": @"Global", @"stream": [CAppService sharedInstance].globalStreamEntity },
         @{ @"name": @"My Stream", @"stream": [CAppService sharedInstance].myStreamEntity },
+        @{ @"name": @"Mentions", @"stream": [CAppService sharedInstance].mentionsStreamEntity },
+        @{ @"name": @"My Posts", @"stream": [CAppService sharedInstance].myPostsStreamEntity },
         ];
 
     for (NSDictionary *thePrototype in thePrototypes)

@@ -251,6 +251,18 @@ static CAppService *gSharedInstance = NULL;
     return([self streamForPath:@"posts/stream"]);
     }
 
+- (CStream *)mentionsStreamEntity
+    {
+    return([self streamForPath:@"users/839/mentions"]);
+    }
+
+- (CStream *)myPostsStreamEntity
+    {
+    return([self streamForPath:@"users/839/posts"]);
+    }
+
+
+
 #pragma mark -
 
 // https://alpha-api.app.net/stream/0/posts/stream
