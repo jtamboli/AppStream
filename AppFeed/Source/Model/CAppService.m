@@ -14,23 +14,21 @@
 #import "CUser.h"
 
 #import "NSDate_InternetDateExtensions.h"
-
-
+#import "CCoreDataManager.h"
 
 // See: https://github.com/appdotnet/api-spec
 
 static CAppService *gSharedInstance = NULL;
 
 @interface CAppService ()
+@property (readwrite, nonatomic, strong) CCoreDataManager *coreDataManager;
 @end
 
 #pragma mark -
 
 @implementation CAppService
 
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize coreDataManager = _coreDataManager;
 @synthesize globalStreamEntity = _globalStreamEntity;
 
 + (CAppService *)sharedInstance
@@ -66,113 +64,123 @@ static CAppService *gSharedInstance = NULL;
 
 #pragma mark -
 
-- (NSURL *)applicationFilesDirectory
+- (CCoreDataManager *)coreDataManager
     {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
-    return [appSupportURL URLByAppendingPathComponent:[NSBundle mainBundle].bundleIdentifier];
-    }
-
-// Creates if necessary and returns the managed object model for the application.
-- (NSManagedObjectModel *)managedObjectModel
-    {
-    if (_managedObjectModel) {
-        return _managedObjectModel;
-    }
-	
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"App" withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return _managedObjectModel;
-    }
-
-// Returns the persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.)
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
-{
-    if (_persistentStoreCoordinator) {
-        return _persistentStoreCoordinator;
-    }
-    
-    NSManagedObjectModel *mom = [self managedObjectModel];
-    if (!mom) {
-        NSLog(@"%@:%@ No model to generate a store from", [self class], NSStringFromSelector(_cmd));
-        return nil;
-    }
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *applicationFilesDirectory = [self applicationFilesDirectory];
-    NSError *error = nil;
-    
-    NSDictionary *properties = [applicationFilesDirectory resourceValuesForKeys:@[NSURLIsDirectoryKey] error:&error];
-    
-    if (!properties) {
-        BOOL ok = NO;
-        if ([error code] == NSFileReadNoSuchFileError) {
-            ok = [fileManager createDirectoryAtPath:[applicationFilesDirectory path] withIntermediateDirectories:YES attributes:nil error:&error];
+    if (_coreDataManager == NULL)
+        {
+        _coreDataManager = [[CCoreDataManager alloc] initWithApplicationDefaults];
         }
-        if (!ok) {
-            [[NSApplication sharedApplication] presentError:error];
-            return nil;
-        }
-    } else {
-        if (![properties[NSURLIsDirectoryKey] boolValue]) {
-            // Customize and localize this error.
-            NSString *failureDescription = [NSString stringWithFormat:@"Expected a folder to store application data, found a file (%@).", [applicationFilesDirectory path]];
-            
-            NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-            [dict setValue:failureDescription forKey:NSLocalizedDescriptionKey];
-            error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:101 userInfo:dict];
-            
-            [[NSApplication sharedApplication] presentError:error];
-            return nil;
-        }
+    return(_coreDataManager);
     }
-    
-    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"AppFeed.sqlite"];
-    NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
 
-    NSDictionary *theOptions = @{
-        NSMigratePersistentStoresAutomaticallyOption : @(YES),
-        NSInferMappingModelAutomaticallyOption : @(YES),
-        };
-
-    if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:theOptions error:&error]) {
-        [[NSApplication sharedApplication] presentError:error];
-        return nil;
-    }
-    _persistentStoreCoordinator = coordinator;
-    
-    return _persistentStoreCoordinator;
-}
-
-// Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) 
 - (NSManagedObjectContext *)managedObjectContext
     {
-    if (_managedObjectContext) {
-        return _managedObjectContext;
+    return(self.coreDataManager.managedObjectContext);
     }
-    
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (!coordinator) {
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        [dict setValue:@"Failed to initialize the store" forKey:NSLocalizedDescriptionKey];
-        [dict setValue:@"There was an error building up the data file." forKey:NSLocalizedFailureReasonErrorKey];
-        NSError *error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
-        [[NSApplication sharedApplication] presentError:error];
-        return nil;
-    }
-    _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
 
-    return _managedObjectContext;
-    }
+//- (NSURL *)applicationFilesDirectory
+//    {
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
+//    return [appSupportURL URLByAppendingPathComponent:[NSBundle mainBundle].bundleIdentifier];
+//    }
+//
+//// Creates if necessary and returns the managed object model for the application.
+//- (NSManagedObjectModel *)managedObjectModel
+//    {
+//    if (_managedObjectModel) {
+//        return _managedObjectModel;
+//    }
+//	
+//    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"App" withExtension:@"momd"];
+//    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+//    return _managedObjectModel;
+//    }
+//
+//// Returns the persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.)
+//- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+//{
+//    if (_persistentStoreCoordinator) {
+//        return _persistentStoreCoordinator;
+//    }
+//    
+//    NSManagedObjectModel *mom = [self managedObjectModel];
+//    if (!mom) {
+//        NSLog(@"%@:%@ No model to generate a store from", [self class], NSStringFromSelector(_cmd));
+//        return nil;
+//    }
+//    
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    NSURL *applicationFilesDirectory = [self applicationFilesDirectory];
+//    NSError *error = nil;
+//    
+//    NSDictionary *properties = [applicationFilesDirectory resourceValuesForKeys:@[NSURLIsDirectoryKey] error:&error];
+//    
+//    if (!properties) {
+//        BOOL ok = NO;
+//        if ([error code] == NSFileReadNoSuchFileError) {
+//            ok = [fileManager createDirectoryAtPath:[applicationFilesDirectory path] withIntermediateDirectories:YES attributes:nil error:&error];
+//        }
+//        if (!ok) {
+//            [[NSApplication sharedApplication] presentError:error];
+//            return nil;
+//        }
+//    } else {
+//        if (![properties[NSURLIsDirectoryKey] boolValue]) {
+//            // Customize and localize this error.
+//            NSString *failureDescription = [NSString stringWithFormat:@"Expected a folder to store application data, found a file (%@).", [applicationFilesDirectory path]];
+//            
+//            NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+//            [dict setValue:failureDescription forKey:NSLocalizedDescriptionKey];
+//            error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:101 userInfo:dict];
+//            
+//            [[NSApplication sharedApplication] presentError:error];
+//            return nil;
+//        }
+//    }
+//    
+//    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"AppFeed.sqlite"];
+//    NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
+//
+//    NSDictionary *theOptions = @{
+//        NSMigratePersistentStoresAutomaticallyOption : @(YES),
+//        NSInferMappingModelAutomaticallyOption : @(YES),
+//        };
+//
+//    if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:theOptions error:&error]) {
+//        [[NSApplication sharedApplication] presentError:error];
+//        return nil;
+//    }
+//    _persistentStoreCoordinator = coordinator;
+//    
+//    return _persistentStoreCoordinator;
+//}
+//
+//// Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) 
+//- (NSManagedObjectContext *)managedObjectContext
+//    {
+//    if (_managedObjectContext) {
+//        return _managedObjectContext;
+//    }
+//    
+//    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+//    if (!coordinator) {
+//        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+//        [dict setValue:@"Failed to initialize the store" forKey:NSLocalizedDescriptionKey];
+//        [dict setValue:@"There was an error building up the data file." forKey:NSLocalizedFailureReasonErrorKey];
+//        NSError *error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
+//        [[NSApplication sharedApplication] presentError:error];
+//        return nil;
+//    }
+//    _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+//    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+//
+//    return _managedObjectContext;
+//    }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
     // Save changes in the application's managed object context before the application terminates.
-    
-    if (!_managedObjectContext) {
-        return NSTerminateNow;
-    }
     
     if (![[self managedObjectContext] commitEditing]) {
         NSLog(@"%@:%@ unable to commit editing to terminate", [self class], NSStringFromSelector(_cmd));
