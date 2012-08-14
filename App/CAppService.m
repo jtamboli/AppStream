@@ -52,7 +52,7 @@ static CAppService *gSharedInstance = NULL;
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
-    return [appSupportURL URLByAppendingPathComponent:@"com.toxicsoftware.App"];
+    return [appSupportURL URLByAppendingPathComponent:[NSBundle mainBundle].bundleIdentifier];
 }
 
 // Creates if necessary and returns the managed object model for the application.
