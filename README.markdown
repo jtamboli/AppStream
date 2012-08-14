@@ -39,6 +39,7 @@ A minimal Mac OS X app.net client
 * relying on server to fix spam problem is foolish
 * actions include user notifications, scripts?
 * built in fav star style functionality
+* statistics on your behavior and on per people (how spammy is that person, how many tweets per hour enter my stream)
 
 ## LICENSE
 
