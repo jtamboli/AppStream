@@ -1,0 +1,3 @@
+[submodule "Externals/TouchFoundation"]
+	path = Externals/TouchFoundation
+	url = git@github.com:TouchCode/TouchFoundation.git

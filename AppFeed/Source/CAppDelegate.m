@@ -21,6 +21,10 @@
     {
     self.mainWindowController = [[CMainWindowController alloc] init];
     [self.mainWindowController.window orderFront:NULL];
+
+//    NSUserNotification *theNotification = [[NSUserNotification alloc] init];
+//    theNotification.title = @"Hello world (2)";
+//    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:theNotification];
     }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender

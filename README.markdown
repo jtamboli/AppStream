@@ -12,6 +12,7 @@ A minimal Mac OS X app.net client
 
 * Create a app.net client app.
 * Use "x-com-toxicsoftware-appfeed:///" as the Callback URL.
+* Don't forget to do a submodule update!
 * Build and run the app, follow the instructions for setting the client id
 
 ## GOALS

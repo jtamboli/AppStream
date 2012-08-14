@@ -13,6 +13,10 @@
 #import "CPost.h"
 #import "CUser.h"
 
+#import "NSDate_InternetDateExtensions.h"
+
+
+
 // See: https://github.com/appdotnet/api-spec
 
 static CAppService *gSharedInstance = NULL;
@@ -336,22 +340,20 @@ static CAppService *gSharedInstance = NULL;
         theArrayMergerHelper.rightArray = theUsers;
         theArrayMergerHelper.rightKey = @"id";
         theArrayMergerHelper.insertHandler = ^(id inJSON) {
-//            NSLog(@"INSERT: %@", thePost[@"text"]);
             CUser *theUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.managedObjectContext];
-            [theUser setValue:inJSON[@"id"] forKey:@"externalIdentifier"];
-            [theUser setValue:inJSON[@"name"] != [NSNull null] ? inJSON[@"name"] : NULL forKey:@"name"];
-            [theUser setValue:inJSON[@"username"] != [NSNull null] ? inJSON[@"name"] : NULL forKey:@"username"];
-            [theUser setValue:inJSON forKey:@"blob"];
+            theUser.externalIdentifier = inJSON[@"id"];
+            theUser.name = inJSON[@"name"] != [NSNull null] ? inJSON[@"name"] : NULL;
+            theUser.username = inJSON[@"username"] != [NSNull null] ? inJSON[@"username"] : NULL;
+            theUser.blob = inJSON;
             return(theUser);
             };
 
         theObjects = [theArrayMergerHelper merge:&theError];
-        NSLog(@"Inserted: %ld", theObjects.count);
+//        NSLog(@"Inserted: %ld", theObjects.count);
         }];
 
     return(theObjects);
     }
-
 
 - (NSArray *)updatePosts:(NSSet *)inPosts
     {
@@ -382,12 +384,11 @@ static CAppService *gSharedInstance = NULL;
         theArrayMergerHelper.rightArray = thePosts;
         theArrayMergerHelper.rightKey = @"id";
         theArrayMergerHelper.insertHandler = ^(id inJSON) {
-//            NSLog(@"INSERT: %@", thePost[@"text"]);
             CPost *thePost = [NSEntityDescription insertNewObjectForEntityForName:@"Post" inManagedObjectContext:self.managedObjectContext];
-            [thePost setValue:inJSON[@"id"] forKey:@"externalIdentifier"];
-            [thePost setValue:inJSON[@"text"] != [NSNull null] ? inJSON[@"text"] : NULL forKey:@"text"];
-            [thePost setValue:[NSDate date] forKey:@"posted"]; // TODO
-            [thePost setValue:inJSON forKey:@"blob"];
+            thePost.externalIdentifier = inJSON[@"id"];
+            thePost.text = inJSON[@"text"] != [NSNull null] ? inJSON[@"text"] : NULL;
+            thePost.posted = [NSDate dateWithISO8601String:inJSON[@"created_at"]];
+            thePost.blob = inJSON;
 
             NSString *theUserID = [inJSON valueForKeyPath:@"user.id"];
             CPost *theUser = [theUsersByID objectForKey:theUserID];
@@ -398,7 +399,7 @@ static CAppService *gSharedInstance = NULL;
             };
 
         theObjects = [theArrayMergerHelper merge:&theError];
-        NSLog(@"Inserted: %ld", theObjects.count);
+//        NSLog(@"Inserted: %ld", theObjects.count);
         }];
 
     return(theObjects);

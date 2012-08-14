@@ -23,6 +23,7 @@
         {
         _stream = inStream;
         _filterPredicate = [NSPredicate predicateWithFormat:@"streams CONTAINS %@", _stream];
+        _sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"posted" ascending:NO] ];
         }
     return self;
     }

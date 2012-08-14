@@ -15,7 +15,7 @@
 
 @property (nonatomic, retain) id blob;
 @property (nonatomic, retain) NSString * externalIdentifier;
-@property (nonatomic) NSTimeInterval posted;
+@property (nonatomic, retain) NSDate *posted;
 @property (nonatomic, retain) NSString * text;
 @property (nonatomic, retain) NSSet *streams;
 @property (nonatomic, retain) CUser *user;
