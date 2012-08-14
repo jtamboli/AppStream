@@ -39,8 +39,16 @@ static CAppService *gSharedInstance = NULL;
         _client_id = [[NSUserDefaults standardUserDefaults] objectForKey:@"client_id"];
         if (_client_id.length == 0)
             {
-            NSLog(@"Use \'defaults write %@ client_id <your_client_id>", [NSBundle mainBundle].bundleIdentifier);
-            NSAssert(NO, @"NO CLIENT ID FOUND");
+            NSString *theInstructions = [NSString stringWithFormat:@"Use \'defaults write %@ client_id <your_client_id>\' from the terminal.", [NSBundle mainBundle].bundleIdentifier];
+            NSLog(@"%@", theInstructions);
+
+            NSAlert *theAlert = [[NSAlert alloc] init];
+            [theAlert setMessageText:@"Coult not find client_id in defaults"];
+            [theAlert setInformativeText:theInstructions];
+            [theAlert addButtonWithTitle:@"Quit"];
+            [theAlert runModal];
+
+            exit(-1);
             }
         }
     return self;
