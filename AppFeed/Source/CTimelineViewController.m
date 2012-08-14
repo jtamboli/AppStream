@@ -9,6 +9,7 @@
 #import "CTimelineViewController.h"
 
 #import "CAppService.h"
+#import "CStream.h"
 
 @interface CTimelineViewController ()
 
@@ -16,12 +17,12 @@
 
 @implementation CTimelineViewController
 
-- (id)initWithStream:(NSManagedObject *)inStream
+- (id)initWithStream:(CStream *)inStream
     {
     if ((self = [super initWithNibName:NSStringFromClass([self class]) bundle:NULL]) != NULL)
         {
         _stream = inStream;
-        _filterPredicate = [NSPredicate predicateWithFormat:@"stream == %@", _stream];
+        _filterPredicate = [NSPredicate predicateWithFormat:@"streams CONTAINS %@", _stream];
         }
     return self;
     }
@@ -30,7 +31,7 @@
     {
     [super loadView];
     //
-    [[CAppService sharedInstance] retrieveGlobalStream:NULL success:NULL];
+    [[CAppService sharedInstance] retrievePostsForStream:self.stream options:NULL success:NULL];
     }
 
 - (NSManagedObjectContext *)managedObjectContext

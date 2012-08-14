@@ -9,6 +9,11 @@
 #import "CAppService.h"
 
 #import "CArrayMergeHelper.h"
+#import "CStream.h"
+#import "CPost.h"
+#import "CUser.h"
+
+// See: https://github.com/appdotnet/api-spec
 
 static CAppService *gSharedInstance = NULL;
 
@@ -22,6 +27,7 @@ static CAppService *gSharedInstance = NULL;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize globalStreamEntity = _globalStreamEntity;
 
 + (CAppService *)sharedInstance
     {
@@ -205,53 +211,55 @@ static CAppService *gSharedInstance = NULL;
 
 #pragma mark -
 
-- (NSManagedObject *)globalStreamEntity
+- (CStream *)streamForPath:(NSString *)inPath
     {
-    __block NSManagedObject *theObject = NULL;
+    __block CStream *theStream = NULL;
 
     [self.managedObjectContext performBlockAndWait:^{
 
         NSFetchRequest *theFetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Stream"];
-        theFetchRequest.predicate = [NSPredicate predicateWithFormat:@"name == 'GLOBAL'"];
+        theFetchRequest.predicate = [NSPredicate predicateWithFormat:@"path == %@", inPath];
 
         NSError *theError = NULL;
         NSArray *theResults = [self.managedObjectContext executeFetchRequest:theFetchRequest error:&theError];
 
         if (theResults.count == 0)
             {
-            theObject = [NSEntityDescription insertNewObjectForEntityForName:@"Stream" inManagedObjectContext:self.managedObjectContext];
-            [theObject setValue:@"GLOBAL" forKey:@"name"];
+            theStream = [NSEntityDescription insertNewObjectForEntityForName:@"Stream" inManagedObjectContext:self.managedObjectContext];
+            theStream.path = inPath;
             }
         else
             {
-            theObject = [theResults lastObject];
+            theStream = [theResults lastObject];
             }
         }];
 
-    return(theObject);
+    return(theStream);
     }
 
-- (NSManagedObject *)myStreamEntity
+- (CStream *)globalStreamEntity
     {
-    return(NULL);
+    if (_globalStreamEntity == NULL);
+        {
+        _globalStreamEntity = [self streamForPath:@"posts/stream/global"];
+        }
+    return(_globalStreamEntity);
     }
 
-- (NSManagedObject *)myPostsStreamEntity
+- (CStream *)myStreamEntity
     {
-    return(NULL);
-    }
-
-- (NSManagedObject *)mentionsStreamEntity
-    {
-    return(NULL);
+    return([self streamForPath:@"posts/stream"]);
     }
 
 #pragma mark -
 
-- (void)retrieveGlobalStream:(NSDictionary *)inOptions success:(void (^)(NSArray *))inSuccessHandler
+// https://alpha-api.app.net/stream/0/posts/stream
+
+- (void)retrievePostsForStream:(CStream *)inStream options:(NSDictionary *)inOptions success:(void (^)(NSArray *))inSuccessHandler;
     {
     NSURL *theURL = [NSURL URLWithString:@"https://alpha-api.app.net/stream/0"];
-    theURL = [theURL URLByAppendingPathComponent:@"posts/stream/global"];
+
+    theURL = [theURL URLByAppendingPathComponent:inStream.path];
 
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:theURL];
 
@@ -273,9 +281,11 @@ static CAppService *gSharedInstance = NULL;
         thePosts = [self updatePosts:[NSSet setWithArray:thePosts]];
 
         [self.managedObjectContext performBlockAndWait:^{
-            for (NSManagedObject *thePost in thePosts)
+            for (CPost *thePost in thePosts)
                 {
-                [thePost setValue:self.globalStreamEntity forKey:@"stream"];
+                [thePost addStreamsObject:inStream];
+
+//                [thePost setValue:self.globalStreamEntity forKey:@"stream"];
                 }
 
             }];
@@ -313,14 +323,14 @@ static CAppService *gSharedInstance = NULL;
         theArrayMergerHelper.leftKey = @"externalIdentifier";
         theArrayMergerHelper.rightArray = theUsers;
         theArrayMergerHelper.rightKey = @"id";
-        theArrayMergerHelper.insertHandler = ^(id thePost) {
+        theArrayMergerHelper.insertHandler = ^(id inJSON) {
 //            NSLog(@"INSERT: %@", thePost[@"text"]);
-            NSManagedObject *theObject = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.managedObjectContext];
-            [theObject setValue:thePost[@"id"] forKey:@"externalIdentifier"];
-            [theObject setValue:thePost[@"name"] != [NSNull null] ? thePost[@"name"] : NULL forKey:@"name"];
-            [theObject setValue:thePost[@"username"] != [NSNull null] ? thePost[@"name"] : NULL forKey:@"username"];
-            [theObject setValue:thePost forKey:@"blob"];
-            return(theObject);
+            CUser *theUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.managedObjectContext];
+            [theUser setValue:inJSON[@"id"] forKey:@"externalIdentifier"];
+            [theUser setValue:inJSON[@"name"] != [NSNull null] ? inJSON[@"name"] : NULL forKey:@"name"];
+            [theUser setValue:inJSON[@"username"] != [NSNull null] ? inJSON[@"name"] : NULL forKey:@"username"];
+            [theUser setValue:inJSON forKey:@"blob"];
+            return(theUser);
             };
 
         theObjects = [theArrayMergerHelper merge:&theError];
@@ -359,20 +369,20 @@ static CAppService *gSharedInstance = NULL;
         theArrayMergerHelper.leftKey = @"externalIdentifier";
         theArrayMergerHelper.rightArray = thePosts;
         theArrayMergerHelper.rightKey = @"id";
-        theArrayMergerHelper.insertHandler = ^(id thePost) {
+        theArrayMergerHelper.insertHandler = ^(id inJSON) {
 //            NSLog(@"INSERT: %@", thePost[@"text"]);
-            NSManagedObject *theObject = [NSEntityDescription insertNewObjectForEntityForName:@"Post" inManagedObjectContext:self.managedObjectContext];
-            [theObject setValue:thePost[@"id"] forKey:@"externalIdentifier"];
-            [theObject setValue:thePost[@"text"] != [NSNull null] ? thePost[@"text"] : NULL forKey:@"text"];
-            [theObject setValue:[NSDate date] forKey:@"posted"]; // TODO
-            [theObject setValue:thePost forKey:@"blob"];
+            CPost *thePost = [NSEntityDescription insertNewObjectForEntityForName:@"Post" inManagedObjectContext:self.managedObjectContext];
+            [thePost setValue:inJSON[@"id"] forKey:@"externalIdentifier"];
+            [thePost setValue:inJSON[@"text"] != [NSNull null] ? inJSON[@"text"] : NULL forKey:@"text"];
+            [thePost setValue:[NSDate date] forKey:@"posted"]; // TODO
+            [thePost setValue:inJSON forKey:@"blob"];
 
-            NSString *theUserID = [thePost valueForKeyPath:@"user.id"];
-            NSManagedObject *theUser = [theUsersByID objectForKey:theUserID];
+            NSString *theUserID = [inJSON valueForKeyPath:@"user.id"];
+            CPost *theUser = [theUsersByID objectForKey:theUserID];
 
-            [theObject setValue:theUser forKey:@"user"];
+            [thePost setValue:theUser forKey:@"user"];
 
-            return(theObject);
+            return(thePost);
             };
 
         theObjects = [theArrayMergerHelper merge:&theError];

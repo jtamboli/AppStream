@@ -12,6 +12,7 @@
 #import "CAppService.h"
 #import "CTimelineViewController.h"
 #import "CContainerView.h"
+#import "CStream.h"
 
 @interface CMainWindowController ()
 @property (readwrite, nonatomic, assign) IBOutlet CContainerView *containerView;

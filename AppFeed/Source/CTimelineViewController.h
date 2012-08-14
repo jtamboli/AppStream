@@ -8,11 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class CStream;
+
 @interface CTimelineViewController : NSViewController
 
-@property (readonly, nonatomic, strong) NSManagedObject *stream;
+@property (readonly, nonatomic, strong) CStream *stream;
 @property (readonly, nonatomic, strong) NSPredicate *filterPredicate;
 
-- (id)initWithStream:(NSManagedObject *)inStream;
+- (id)initWithStream:(CStream *)inStream;
 
 @end

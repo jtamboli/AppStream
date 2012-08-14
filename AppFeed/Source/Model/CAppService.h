@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class CStream;
+
 @interface CAppService : NSObject
 
 @property (readwrite, nonatomic, strong) NSString *client_id;
@@ -17,16 +19,16 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSWindowController *mainWindowController;
-@property (readonly, strong, nonatomic) NSManagedObject *globalStreamEntity;
-@property (readonly, strong, nonatomic) NSManagedObject *myStreamEntity;
-@property (readonly, strong, nonatomic) NSManagedObject *myPostsStreamEntity;
-@property (readonly, strong, nonatomic) NSManagedObject *mentionsStreamEntity;
+@property (readonly, strong, nonatomic) CStream *globalStreamEntity; // TODO These are MOC specific and that's _probably_ bad.
+@property (readonly, strong, nonatomic) CStream *myStreamEntity; // TODO These are MOC specific and that's _probably_ bad.
+@property (readonly, strong, nonatomic) CStream *myPostsStreamEntity; // TODO These are MOC specific and that's _probably_ bad.
+@property (readonly, strong, nonatomic) CStream *mentionsStreamEntity; // TODO These are MOC specific and that's _probably_ bad.
 
 + (CAppService *)sharedInstance;
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender;
 
-- (void)retrieveGlobalStream:(NSDictionary *)inOptions success:(void (^)(NSArray *))inSuccessHandler;
+- (void)retrievePostsForStream:(CStream *)inStream options:(NSDictionary *)inOptions success:(void (^)(NSArray *))inSuccessHandler;
 
 
 @end
