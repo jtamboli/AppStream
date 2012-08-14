@@ -21,7 +21,6 @@ A minimal Mac OS X app.net client
 
 ## TODO/BUGS
 
-* All post sorting is broken. Not parsing ISO8601 dates yet.
 * UI is ass. Not too interested in UI until basic network and database functionality is there.
 * Overloading of the term stream: https://alpha.app.net/schwa/post/52516 - this is a problem in code. As real app.net streams come online I expect a refactor will be needed.
 * Posting
@@ -33,14 +32,15 @@ A minimal Mac OS X app.net client
 * Code is being "sketched out" and is far from well designed. Expect a lot of churn/refactoring
 
 ## FEATURE IDEAS
+
 * Use the Latent Semantic Mapping framework to classify posts
 * Intelligently handle hashtags, usernames, urls etc - provide popover contextual info/actions on these item, e.g. hashtags popover will have a "view all posts with this hashtag" action.
 * Markdown support
-* built in filtering, blocking, spam control and triggered actions
-* relying on server to fix spam problem is foolish
-* actions include user notifications, scripts?
-* built in fav star style functionality
-* statistics on your behavior and on per people (how spammy is that person, how many tweets per hour enter my stream)
+* Built in filtering, blocking, spam control and triggered actions
+* Relying on server to fix spam problem is foolish
+* Actions include user notifications, scripts?
+* Built in fav star style functionality
+* Statistics on your behavior and on per people (how spammy is that person, how many tweets per hour enter my stream)
 
 ## LICENSE
 
