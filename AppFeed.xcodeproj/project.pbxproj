@@ -79,9 +79,6 @@
 		4520B4F415DAD38400B81172 /* Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B49915DAD38300B81172 /* Geometry.m */; };
 		4520B4F515DAD38400B81172 /* CNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B49C15DAD38400B81172 /* CNetworkManager.m */; };
 		4520B4F615DAD38400B81172 /* CTestNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B49E15DAD38400B81172 /* CTestNetworkManager.m */; };
-		4520B4F715DAD38400B81172 /* CHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B4A115DAD38400B81172 /* CHTTPClient.m */; };
-		4520B4F815DAD38400B81172 /* CMyURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B4A315DAD38400B81172 /* CMyURLResponse.m */; };
-		4520B4F915DAD38400B81172 /* CURLOperation2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B4A515DAD38400B81172 /* CURLOperation2.m */; };
 		4520B4FA15DAD38400B81172 /* CBundleResourceURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B4A915DAD38400B81172 /* CBundleResourceURLProtocol.m */; };
 		4520B4FB15DAD38400B81172 /* CCommaArrayTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B4AC15DAD38400B81172 /* CCommaArrayTransformer.m */; };
 		4520B4FC15DAD38400B81172 /* CFloatTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B4AE15DAD38400B81172 /* CFloatTransformer.m */; };
@@ -233,12 +230,6 @@
 		4520B49C15DAD38400B81172 /* CNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNetworkManager.m; sourceTree = "<group>"; };
 		4520B49D15DAD38400B81172 /* CTestNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTestNetworkManager.h; sourceTree = "<group>"; };
 		4520B49E15DAD38400B81172 /* CTestNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTestNetworkManager.m; sourceTree = "<group>"; };
-		4520B4A015DAD38400B81172 /* CHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTTPClient.h; sourceTree = "<group>"; };
-		4520B4A115DAD38400B81172 /* CHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTTPClient.m; sourceTree = "<group>"; };
-		4520B4A215DAD38400B81172 /* CMyURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMyURLResponse.h; sourceTree = "<group>"; };
-		4520B4A315DAD38400B81172 /* CMyURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMyURLResponse.m; sourceTree = "<group>"; };
-		4520B4A415DAD38400B81172 /* CURLOperation2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CURLOperation2.h; sourceTree = "<group>"; };
-		4520B4A515DAD38400B81172 /* CURLOperation2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CURLOperation2.m; sourceTree = "<group>"; };
 		4520B4A615DAD38400B81172 /* TouchcodePrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchcodePrefix.h; sourceTree = "<group>"; };
 		4520B4A815DAD38400B81172 /* CBundleResourceURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBundleResourceURLProtocol.h; sourceTree = "<group>"; };
 		4520B4A915DAD38400B81172 /* CBundleResourceURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBundleResourceURLProtocol.m; sourceTree = "<group>"; };
@@ -532,22 +523,8 @@
 				4520B49C15DAD38400B81172 /* CNetworkManager.m */,
 				4520B49D15DAD38400B81172 /* CTestNetworkManager.h */,
 				4520B49E15DAD38400B81172 /* CTestNetworkManager.m */,
-				4520B49F15DAD38400B81172 /* Experimental */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		4520B49F15DAD38400B81172 /* Experimental */ = {
-			isa = PBXGroup;
-			children = (
-				4520B4A015DAD38400B81172 /* CHTTPClient.h */,
-				4520B4A115DAD38400B81172 /* CHTTPClient.m */,
-				4520B4A215DAD38400B81172 /* CMyURLResponse.h */,
-				4520B4A315DAD38400B81172 /* CMyURLResponse.m */,
-				4520B4A415DAD38400B81172 /* CURLOperation2.h */,
-				4520B4A515DAD38400B81172 /* CURLOperation2.m */,
-			);
-			path = Experimental;
 			sourceTree = "<group>";
 		};
 		4520B4A715DAD38400B81172 /* URLProtocols */ = {
@@ -759,9 +736,6 @@
 				4520B4F415DAD38400B81172 /* Geometry.m in Sources */,
 				4520B4F515DAD38400B81172 /* CNetworkManager.m in Sources */,
 				4520B4F615DAD38400B81172 /* CTestNetworkManager.m in Sources */,
-				4520B4F715DAD38400B81172 /* CHTTPClient.m in Sources */,
-				4520B4F815DAD38400B81172 /* CMyURLResponse.m in Sources */,
-				4520B4F915DAD38400B81172 /* CURLOperation2.m in Sources */,
 				4520B4FA15DAD38400B81172 /* CBundleResourceURLProtocol.m in Sources */,
 				4520B4FB15DAD38400B81172 /* CCommaArrayTransformer.m in Sources */,
 				4520B4FC15DAD38400B81172 /* CFloatTransformer.m in Sources */,

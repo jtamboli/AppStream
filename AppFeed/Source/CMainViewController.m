@@ -28,6 +28,21 @@
     return self;
 }
 
+- (IBAction)refresh:(id)sender
+    {
+    NSArray *theStreams = @[
+        [CAppService sharedInstance].globalStreamEntity,
+        [CAppService sharedInstance].myStreamEntity,
+        [CAppService sharedInstance].mentionsStreamEntity,
+        [CAppService sharedInstance].myPostsStreamEntity,
+        ];
+
+    for (CStream *theStream in theStreams)
+        {
+        [[CAppService sharedInstance] retrievePostsForStream:theStream options:NULL success:NULL];
+        }
+    }
+
 - (void)loadView;
     {
     [super loadView];

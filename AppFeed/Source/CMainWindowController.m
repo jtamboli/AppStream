@@ -30,6 +30,11 @@
     return self;
     }
 
+- (NSResponder *)nextResponder
+    {
+    return(self.containerView.viewController);
+    }
+
 - (void)windowDidLoad
     {
     [super windowDidLoad];
