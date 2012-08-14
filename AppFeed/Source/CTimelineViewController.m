@@ -16,11 +16,12 @@
 
 @implementation CTimelineViewController
 
-- (id)init
+- (id)initWithStream:(NSManagedObject *)inStream
     {
     if ((self = [super initWithNibName:NSStringFromClass([self class]) bundle:NULL]) != NULL)
         {
-
+        _stream = inStream;
+        _filterPredicate = [NSPredicate predicateWithFormat:@"stream == %@", _stream];
         }
     return self;
     }

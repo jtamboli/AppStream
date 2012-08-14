@@ -43,7 +43,7 @@
 		4520B2FD15DA28E500B81172 /* CTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTimelineViewController.h; sourceTree = "<group>"; };
 		4520B2FE15DA28E500B81172 /* CTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTimelineViewController.m; sourceTree = "<group>"; };
 		4520B2FF15DA28E500B81172 /* CTimelineViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CTimelineViewController.xib; sourceTree = "<group>"; };
-		4520B30315DA28E500B81172 /* App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = App.xcdatamodel; sourceTree = "<group>"; };
+		4520B30315DA28E500B81172 /* 1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 1.xcdatamodel; sourceTree = "<group>"; };
 		4520B30415DA28E500B81172 /* CAppService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAppService.h; sourceTree = "<group>"; };
 		4520B30515DA28E500B81172 /* CAppService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAppService.m; sourceTree = "<group>"; };
 		4520B30615DA28E500B81172 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
@@ -57,6 +57,7 @@
 		4520B30F15DA28E500B81172 /* NSURL+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Extensions.m"; sourceTree = "<group>"; };
 		4520B32115DA290200B81172 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		4520B32315DA293C00B81172 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4520B32515DA2BF800B81172 /* 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.xcdatamodel; sourceTree = "<group>"; };
 		45DAA30915D8B26300459C51 /* AppFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DAA30D15D8B26300459C51 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		45DAA31015D8B26300459C51 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -406,9 +407,10 @@
 		4520B30215DA28E500B81172 /* App.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				4520B30315DA28E500B81172 /* App.xcdatamodel */,
+				4520B32515DA2BF800B81172 /* 2.xcdatamodel */,
+				4520B30315DA28E500B81172 /* 1.xcdatamodel */,
 			);
-			currentVersion = 4520B30315DA28E500B81172 /* App.xcdatamodel */;
+			currentVersion = 4520B32515DA2BF800B81172 /* 2.xcdatamodel */;
 			path = App.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

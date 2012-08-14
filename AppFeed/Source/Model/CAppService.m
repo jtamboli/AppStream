@@ -57,15 +57,15 @@ static CAppService *gSharedInstance = NULL;
 #pragma mark -
 
 - (NSURL *)applicationFilesDirectory
-{
+    {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
     return [appSupportURL URLByAppendingPathComponent:[NSBundle mainBundle].bundleIdentifier];
-}
+    }
 
 // Creates if necessary and returns the managed object model for the application.
 - (NSManagedObjectModel *)managedObjectModel
-{
+    {
     if (_managedObjectModel) {
         return _managedObjectModel;
     }
@@ -73,7 +73,7 @@ static CAppService *gSharedInstance = NULL;
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"App" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
-}
+    }
 
 // Returns the persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.)
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator
@@ -117,9 +117,15 @@ static CAppService *gSharedInstance = NULL;
         }
     }
     
-    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"App.storedata"];
+    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"AppFeed.sqlite"];
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
-    if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]) {
+
+    NSDictionary *theOptions = @{
+        NSMigratePersistentStoresAutomaticallyOption : @(YES),
+        NSInferMappingModelAutomaticallyOption : @(YES),
+        };
+
+    if (![coordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:url options:theOptions error:&error]) {
         [[NSApplication sharedApplication] presentError:error];
         return nil;
     }
@@ -130,7 +136,7 @@ static CAppService *gSharedInstance = NULL;
 
 // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) 
 - (NSManagedObjectContext *)managedObjectContext
-{
+    {
     if (_managedObjectContext) {
         return _managedObjectContext;
     }
@@ -148,7 +154,7 @@ static CAppService *gSharedInstance = NULL;
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
 
     return _managedObjectContext;
-}
+    }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
@@ -197,6 +203,48 @@ static CAppService *gSharedInstance = NULL;
     return NSTerminateNow;
 }
 
+#pragma mark -
+
+- (NSManagedObject *)globalStreamEntity
+    {
+    __block NSManagedObject *theObject = NULL;
+
+    [self.managedObjectContext performBlockAndWait:^{
+
+        NSFetchRequest *theFetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Stream"];
+        theFetchRequest.predicate = [NSPredicate predicateWithFormat:@"name == 'GLOBAL'"];
+
+        NSError *theError = NULL;
+        NSArray *theResults = [self.managedObjectContext executeFetchRequest:theFetchRequest error:&theError];
+
+        if (theResults.count == 0)
+            {
+            theObject = [NSEntityDescription insertNewObjectForEntityForName:@"Stream" inManagedObjectContext:self.managedObjectContext];
+            [theObject setValue:@"GLOBAL" forKey:@"name"];
+            }
+        else
+            {
+            theObject = [theResults lastObject];
+            }
+        }];
+
+    return(theObject);
+    }
+
+- (NSManagedObject *)myStreamEntity
+    {
+    return(NULL);
+    }
+
+- (NSManagedObject *)myPostsStreamEntity
+    {
+    return(NULL);
+    }
+
+- (NSManagedObject *)mentionsStreamEntity
+    {
+    return(NULL);
+    }
 
 #pragma mark -
 
@@ -222,7 +270,15 @@ static CAppService *gSharedInstance = NULL;
         NSArray *thePosts = [NSJSONSerialization JSONObjectWithData:data options:0 error:&theError];
 
 
-        [self updatePosts:[NSSet setWithArray:thePosts]];
+        thePosts = [self updatePosts:[NSSet setWithArray:thePosts]];
+
+        [self.managedObjectContext performBlockAndWait:^{
+            for (NSManagedObject *thePost in thePosts)
+                {
+                [thePost setValue:self.globalStreamEntity forKey:@"stream"];
+                }
+
+            }];
 
         if (inSuccessHandler)
             {

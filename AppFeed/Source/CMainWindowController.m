@@ -43,15 +43,12 @@
     self.containerView.viewController = viewController;
     }
 
-
-
 - (void)authorized
     {
     [self.viewController.view removeFromSuperview];
     self.viewController = NULL;
 
-    self.viewController = [[CTimelineViewController alloc] init];
+    self.viewController = [[CTimelineViewController alloc] initWithStream:[CAppService sharedInstance].globalStreamEntity];
     }
-
 
 @end

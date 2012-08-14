@@ -17,6 +17,10 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSWindowController *mainWindowController;
+@property (readonly, strong, nonatomic) NSManagedObject *globalStreamEntity;
+@property (readonly, strong, nonatomic) NSManagedObject *myStreamEntity;
+@property (readonly, strong, nonatomic) NSManagedObject *myPostsStreamEntity;
+@property (readonly, strong, nonatomic) NSManagedObject *mentionsStreamEntity;
 
 + (CAppService *)sharedInstance;
 
