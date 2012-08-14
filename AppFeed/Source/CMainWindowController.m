@@ -10,6 +10,7 @@
 
 #import "CAuthenticationViewController.h"
 #import "CAppService.h"
+#import "CMainViewController.h"
 #import "CTimelineViewController.h"
 #import "CContainerView.h"
 #import "CStream.h"
@@ -49,7 +50,8 @@
     [self.viewController.view removeFromSuperview];
     self.viewController = NULL;
 
-    self.viewController = [[CTimelineViewController alloc] initWithStream:[CAppService sharedInstance].globalStreamEntity];
+//    self.viewController = [[CTimelineViewController alloc] initWithStream:[CAppService sharedInstance].globalStreamEntity];
+    self.viewController = [[CMainViewController alloc] init];
     }
 
 @end

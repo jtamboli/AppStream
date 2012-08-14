@@ -27,6 +27,8 @@
 		4520B33215DA35A700B81172 /* CPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B33115DA35A700B81172 /* CPost.m */; };
 		4520B33515DA35A800B81172 /* CStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B33415DA35A800B81172 /* CStream.m */; };
 		4520B33815DA35A800B81172 /* CUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B33715DA35A800B81172 /* CUser.m */; };
+		4520B34115DA3D0000B81172 /* CMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B33F15DA3D0000B81172 /* CMainViewController.m */; };
+		4520B34215DA3D0000B81172 /* CMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520B34015DA3D0000B81172 /* CMainViewController.xib */; };
 		45DAA30E15D8B26300459C51 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA30D15D8B26300459C51 /* Cocoa.framework */; };
 		45DAA35B15D8B61E00459C51 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA35415D8B3AE00459C51 /* WebKit.framework */; };
 /* End PBXBuildFile section */
@@ -60,15 +62,18 @@
 		4520B30F15DA28E500B81172 /* NSURL+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Extensions.m"; sourceTree = "<group>"; };
 		4520B32115DA290200B81172 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		4520B32315DA293C00B81172 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4520B32515DA2BF800B81172 /* 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.xcdatamodel; sourceTree = "<group>"; };
-		4520B32615DA344E00B81172 /* 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3.xcdatamodel; sourceTree = "<group>"; };
+		4520B32515DA2BF800B81172 /* 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 2.xcdatamodel; sourceTree = "<group>"; };
+		4520B32615DA344E00B81172 /* 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 3.xcdatamodel; sourceTree = "<group>"; };
 		4520B33015DA35A700B81172 /* CPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPost.h; sourceTree = "<group>"; };
 		4520B33115DA35A700B81172 /* CPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPost.m; sourceTree = "<group>"; };
 		4520B33315DA35A800B81172 /* CStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CStream.h; sourceTree = "<group>"; };
 		4520B33415DA35A800B81172 /* CStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CStream.m; sourceTree = "<group>"; };
 		4520B33615DA35A800B81172 /* CUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CUser.h; sourceTree = "<group>"; };
 		4520B33715DA35A800B81172 /* CUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CUser.m; sourceTree = "<group>"; };
-		4520B33915DA399D00B81172 /* 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = 4.xcdatamodel; sourceTree = "<group>"; };
+		4520B33915DA399D00B81172 /* 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 4.xcdatamodel; sourceTree = "<group>"; };
+		4520B33E15DA3D0000B81172 /* CMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMainViewController.h; sourceTree = "<group>"; };
+		4520B33F15DA3D0000B81172 /* CMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMainViewController.m; sourceTree = "<group>"; };
+		4520B34015DA3D0000B81172 /* CMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CMainViewController.xib; sourceTree = "<group>"; };
 		45DAA30915D8B26300459C51 /* AppFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DAA30D15D8B26300459C51 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		45DAA31015D8B26300459C51 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -126,6 +131,9 @@
 				4520B2FA15DA28E500B81172 /* CAuthenticationViewController.xib */,
 				4520B2FB15DA28E500B81172 /* CMainWindowController.h */,
 				4520B2FC15DA28E500B81172 /* CMainWindowController.m */,
+				4520B33E15DA3D0000B81172 /* CMainViewController.h */,
+				4520B33F15DA3D0000B81172 /* CMainViewController.m */,
+				4520B34015DA3D0000B81172 /* CMainViewController.xib */,
 				4520B2FD15DA28E500B81172 /* CTimelineViewController.h */,
 				4520B2FE15DA28E500B81172 /* CTimelineViewController.m */,
 				4520B2FF15DA28E500B81172 /* CTimelineViewController.xib */,
@@ -266,6 +274,7 @@
 				4520B31615DA28E500B81172 /* CAuthenticationViewController.xib in Resources */,
 				4520B31915DA28E500B81172 /* CTimelineViewController.xib in Resources */,
 				4520B32215DA290200B81172 /* MainWindow.xib in Resources */,
+				4520B34215DA3D0000B81172 /* CMainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +299,7 @@
 				4520B33215DA35A700B81172 /* CPost.m in Sources */,
 				4520B33515DA35A800B81172 /* CStream.m in Sources */,
 				4520B33815DA35A800B81172 /* CUser.m in Sources */,
+				4520B34115DA3D0000B81172 /* CMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
