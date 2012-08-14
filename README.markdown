@@ -22,6 +22,7 @@ A minimal Mac OS X app.net client
 
 ## TODO/BUGS
 
+* All post sorting is broken. Not parsing ISO8601 dates yet.
 * UI is ass. Not too interested in UI until basic network and database functionality is there.
 * Overloading of the term stream: https://alpha.app.net/schwa/post/52516 - this is a problem in code. As real app.net streams come online I expect a refactor will be needed.
 * Posting
