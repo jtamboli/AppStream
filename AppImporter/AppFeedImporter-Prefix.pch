@@ -1,6 +1,0 @@
-//
-// Prefix header for all source files of the 'AppImporter' target in the 'AppImporter' project
-//
-
-#ifdef __OBJC__
-#endif

@@ -20,15 +20,6 @@
 		45DAA32115D8B26300459C51 /* CAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAA32015D8B26300459C51 /* CAppDelegate.m */; };
 		45DAA32415D8B26400459C51 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45DAA32215D8B26400459C51 /* MainMenu.xib */; };
 		45DAA32715D8B26400459C51 /* App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45DAA32515D8B26400459C51 /* App.xcdatamodeld */; };
-		45DAA32F15D8B26400459C51 /* AppFeedImporter.mdimporter in Resources */ = {isa = PBXBuildFile; fileRef = 45DAA32C15D8B26400459C51 /* AppFeedImporter.mdimporter */; };
-		45DAA33115D8B26400459C51 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA33015D8B26400459C51 /* CoreServices.framework */; };
-		45DAA33315D8B26400459C51 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA33215D8B26400459C51 /* CoreFoundation.framework */; };
-		45DAA33515D8B26400459C51 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA33415D8B26400459C51 /* CoreData.framework */; };
-		45DAA33715D8B26400459C51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA33615D8B26400459C51 /* Foundation.framework */; };
-		45DAA33D15D8B26400459C51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45DAA33B15D8B26400459C51 /* InfoPlist.strings */; };
-		45DAA33F15D8B26400459C51 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 45DAA33E15D8B26400459C51 /* main.c */; };
-		45DAA34115D8B26400459C51 /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAA34015D8B26400459C51 /* GetMetadataForFile.m */; };
-		45DAA34415D8B26400459C51 /* MySpotlightImporter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAA34315D8B26400459C51 /* MySpotlightImporter.m */; };
 		45DAA35215D8B33200459C51 /* CAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAA35015D8B33200459C51 /* CAuthenticationViewController.m */; };
 		45DAA35315D8B33200459C51 /* CAuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45DAA35115D8B33200459C51 /* CAuthenticationViewController.xib */; };
 		45DAA35815D8B42F00459C51 /* CMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAA35715D8B42F00459C51 /* CMainWindowController.m */; };
@@ -36,16 +27,6 @@
 		45DAA35B15D8B61E00459C51 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA35415D8B3AE00459C51 /* WebKit.framework */; };
 		45DAA35E15D8B70700459C51 /* CAppService.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DAA35D15D8B70700459C51 /* CAppService.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		45DAA32D15D8B26400459C51 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 45DAA30015D8B26300459C51 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 45DAA32B15D8B26400459C51;
-			remoteInfo = AppImporter;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		459E89FF15DA112400460A8B /* CContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CContainerView.h; sourceTree = "<group>"; };
@@ -73,19 +54,10 @@
 		45DAA32015D8B26300459C51 /* CAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAppDelegate.m; sourceTree = "<group>"; };
 		45DAA32315D8B26400459C51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		45DAA32615D8B26400459C51 /* App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = App.xcdatamodel; sourceTree = "<group>"; };
-		45DAA32C15D8B26400459C51 /* AppFeedImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppFeedImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DAA33015D8B26400459C51 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		45DAA33215D8B26400459C51 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		45DAA33415D8B26400459C51 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		45DAA33615D8B26400459C51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		45DAA33A15D8B26400459C51 /* AppFeedImporter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppFeedImporter-Info.plist"; sourceTree = "<group>"; };
-		45DAA33C15D8B26400459C51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		45DAA33E15D8B26400459C51 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		45DAA34015D8B26400459C51 /* GetMetadataForFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
-		45DAA34215D8B26400459C51 /* MySpotlightImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySpotlightImporter.h; sourceTree = "<group>"; };
-		45DAA34315D8B26400459C51 /* MySpotlightImporter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MySpotlightImporter.m; sourceTree = "<group>"; };
-		45DAA34515D8B26400459C51 /* Importer Read Me.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Importer Read Me.txt"; sourceTree = "<group>"; };
-		45DAA34615D8B26400459C51 /* AppFeedImporter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppFeedImporter-Prefix.pch"; sourceTree = "<group>"; };
 		45DAA34F15D8B33200459C51 /* CAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAuthenticationViewController.h; sourceTree = "<group>"; };
 		45DAA35015D8B33200459C51 /* CAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAuthenticationViewController.m; sourceTree = "<group>"; };
 		45DAA35115D8B33200459C51 /* CAuthenticationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CAuthenticationViewController.xib; sourceTree = "<group>"; };
@@ -107,17 +79,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45DAA32915D8B26400459C51 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45DAA33115D8B26400459C51 /* CoreServices.framework in Frameworks */,
-				45DAA33315D8B26400459C51 /* CoreFoundation.framework in Frameworks */,
-				45DAA33515D8B26400459C51 /* CoreData.framework in Frameworks */,
-				45DAA33715D8B26400459C51 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -125,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				45DAA31315D8B26300459C51 /* App */,
-				45DAA33815D8B26400459C51 /* AppImporter */,
 				45DAA30C15D8B26300459C51 /* Frameworks */,
 				45DAA30A15D8B26300459C51 /* Products */,
 			);
@@ -135,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				45DAA30915D8B26300459C51 /* AppFeed.app */,
-				45DAA32C15D8B26400459C51 /* AppFeedImporter.mdimporter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,29 +166,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		45DAA33815D8B26400459C51 /* AppImporter */ = {
-			isa = PBXGroup;
-			children = (
-				45DAA34015D8B26400459C51 /* GetMetadataForFile.m */,
-				45DAA34215D8B26400459C51 /* MySpotlightImporter.h */,
-				45DAA34315D8B26400459C51 /* MySpotlightImporter.m */,
-				45DAA34515D8B26400459C51 /* Importer Read Me.txt */,
-				45DAA33915D8B26400459C51 /* Supporting Files */,
-			);
-			path = AppImporter;
-			sourceTree = "<group>";
-		};
-		45DAA33915D8B26400459C51 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				45DAA33A15D8B26400459C51 /* AppFeedImporter-Info.plist */,
-				45DAA33B15D8B26400459C51 /* InfoPlist.strings */,
-				45DAA33E15D8B26400459C51 /* main.c */,
-				45DAA34615D8B26400459C51 /* AppFeedImporter-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -244,29 +180,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				45DAA32E15D8B26400459C51 /* PBXTargetDependency */,
 			);
 			name = AppFeed;
 			productName = App;
 			productReference = 45DAA30915D8B26300459C51 /* AppFeed.app */;
 			productType = "com.apple.product-type.application";
-		};
-		45DAA32B15D8B26400459C51 /* AppFeedImporter */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 45DAA34915D8B26400459C51 /* Build configuration list for PBXNativeTarget "AppFeedImporter" */;
-			buildPhases = (
-				45DAA32815D8B26400459C51 /* Sources */,
-				45DAA32915D8B26400459C51 /* Frameworks */,
-				45DAA32A15D8B26400459C51 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AppFeedImporter;
-			productName = AppImporter;
-			productReference = 45DAA32C15D8B26400459C51 /* AppFeedImporter.mdimporter */;
-			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -291,7 +209,6 @@
 			projectRoot = "";
 			targets = (
 				45DAA30815D8B26300459C51 /* AppFeed */,
-				45DAA32B15D8B26400459C51 /* AppFeedImporter */,
 			);
 		};
 /* End PBXProject section */
@@ -304,18 +221,9 @@
 				45DAA31815D8B26300459C51 /* InfoPlist.strings in Resources */,
 				45DAA31E15D8B26300459C51 /* Credits.rtf in Resources */,
 				45DAA32415D8B26400459C51 /* MainMenu.xib in Resources */,
-				45DAA32F15D8B26400459C51 /* AppFeedImporter.mdimporter in Resources */,
 				45DAA35315D8B33200459C51 /* CAuthenticationViewController.xib in Resources */,
 				45DAA35A15D8B4C500459C51 /* MainWindow.xib in Resources */,
 				459FE7E915D8CE8E00D1CDA1 /* CTimelineViewController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		45DAA32A15D8B26400459C51 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45DAA33D15D8B26400459C51 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,25 +248,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		45DAA32815D8B26400459C51 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				45DAA33F15D8B26400459C51 /* main.c in Sources */,
-				45DAA34115D8B26400459C51 /* GetMetadataForFile.m in Sources */,
-				45DAA34415D8B26400459C51 /* MySpotlightImporter.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		45DAA32E15D8B26400459C51 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 45DAA32B15D8B26400459C51 /* AppFeedImporter */;
-			targetProxy = 45DAA32D15D8B26400459C51 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		45DAA31615D8B26300459C51 /* InfoPlist.strings */ = {
@@ -383,14 +273,6 @@
 				45DAA32315D8B26400459C51 /* en */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		45DAA33B15D8B26400459C51 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45DAA33C15D8B26400459C51 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -449,38 +331,6 @@
 			};
 			name = Release;
 		};
-		45DAA34A15D8B26400459C51 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AppImporter/AppFeedImporter-Prefix.pch";
-				INFOPLIST_FILE = "AppImporter/AppFeedImporter-Info.plist";
-				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
-				LIBRARY_STYLE = BUNDLE;
-				PRODUCT_NAME = AppFeedImporter;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = mdimporter;
-			};
-			name = Debug;
-		};
-		45DAA34B15D8B26400459C51 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AppImporter/AppFeedImporter-Prefix.pch";
-				INFOPLIST_FILE = "AppImporter/AppFeedImporter-Info.plist";
-				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
-				LIBRARY_STYLE = BUNDLE;
-				PRODUCT_NAME = AppFeedImporter;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = mdimporter;
-			};
-			name = Release;
-		};
 		45DAA34D15D8B26400459C51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -513,15 +363,6 @@
 			buildConfigurations = (
 				45DAA34715D8B26400459C51 /* Debug */,
 				45DAA34815D8B26400459C51 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		45DAA34915D8B26400459C51 /* Build configuration list for PBXNativeTarget "AppFeedImporter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				45DAA34A15D8B26400459C51 /* Debug */,
-				45DAA34B15D8B26400459C51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
