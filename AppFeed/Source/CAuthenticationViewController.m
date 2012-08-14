@@ -36,7 +36,7 @@
     //
     self.webView.resourceLoadDelegate = self;
 
-    NSURL *theRedirectURL = [NSURL URLWithString:@"x-appdotnethelper:///"];
+    NSURL *theRedirectURL = [NSURL URLWithString:@"x-com-toxicsoftware-appfeed:///"];
     NSArray *theScopes = @[@"stream", @"email", @"write_post", @"follow", @"messages", @"export"];
 
     NSDictionary *theQueryDictionary = @{
@@ -56,7 +56,7 @@
 
 - (NSURLRequest *)webView:(WebView *)sender resource:(id)identifier willSendRequest:(NSURLRequest *)request redirectResponse:(NSURLResponse *)redirectResponse fromDataSource:(WebDataSource *)dataSource
     {
-    if ([request.URL.scheme isEqualToString:@"x-appdotnethelper"])
+    if ([request.URL.scheme isEqualToString:@"x-com-toxicsoftware-appfeed"])
         {
         NSError *error = NULL;
         NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^ *access_token *= *(.+) *$" options:0 error:&error];
