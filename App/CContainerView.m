@@ -53,11 +53,11 @@
         }
     }
 
-- (void)drawRect:(NSRect)dirtyRect
-	{
-	[[NSColor redColor] set];
-	NSFrameRect(self.bounds);
-	}
+//- (void)drawRect:(NSRect)dirtyRect
+//	{
+//	[[NSColor redColor] set];
+//	NSFrameRect(self.bounds);
+//	}
 
 //#if 0
 //- (void)updateConstraints
