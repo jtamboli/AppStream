@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString * text;
 @property (nonatomic, retain) NSSet *streams;
 @property (nonatomic, retain) CUser *user;
+@property (nonatomic, retain) NSAttributedString *attributedText;
 @end
 
 @interface CPost (CoreDataGeneratedAccessors)

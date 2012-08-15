@@ -89,12 +89,13 @@
 		4520B4FF15DAD38400B81172 /* CYAKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B4B515DAD38400B81172 /* CYAKeychain.m */; };
 		4520B52015DB124200B81172 /* CPostWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B51E15DB124200B81172 /* CPostWindowController.m */; };
 		4520B52115DB124200B81172 /* CPostWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520B51F15DB124200B81172 /* CPostWindowController.xib */; };
+		45BB80AA15DB759C0055EBA2 /* NSAttributedString+PostExtensins.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BB80A915DB759C0055EBA2 /* NSAttributedString+PostExtensins.m */; };
 		45DAA30E15D8B26300459C51 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA30D15D8B26300459C51 /* Cocoa.framework */; };
 		45DAA35B15D8B61E00459C51 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA35415D8B3AE00459C51 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		450A2FDE15DB6FC2002B93B1 /* 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = 5.xcdatamodel; sourceTree = "<group>"; };
+		450A2FDE15DB6FC2002B93B1 /* 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 5.xcdatamodel; sourceTree = "<group>"; };
 		451339DA15DB2F38009A1E59 /* CAsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAsyncImageView.h; sourceTree = "<group>"; };
 		451339DB15DB2F38009A1E59 /* CAsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAsyncImageView.m; sourceTree = "<group>"; };
 		451339DE15DB3012009A1E59 /* CTimelineTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTimelineTableCellView.h; sourceTree = "<group>"; };
@@ -255,6 +256,9 @@
 		4520B51D15DB124200B81172 /* CPostWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPostWindowController.h; sourceTree = "<group>"; };
 		4520B51E15DB124200B81172 /* CPostWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPostWindowController.m; sourceTree = "<group>"; };
 		4520B51F15DB124200B81172 /* CPostWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPostWindowController.xib; sourceTree = "<group>"; };
+		45BB80A815DB759C0055EBA2 /* NSAttributedString+PostExtensins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+PostExtensins.h"; sourceTree = "<group>"; };
+		45BB80A915DB759C0055EBA2 /* NSAttributedString+PostExtensins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+PostExtensins.m"; sourceTree = "<group>"; };
+		45BB80AC15DB76A60055EBA2 /* 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = 6.xcdatamodel; sourceTree = "<group>"; };
 		45DAA30915D8B26300459C51 /* AppFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DAA30D15D8B26300459C51 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		45DAA31015D8B26300459C51 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -326,6 +330,8 @@
 				451339DB15DB2F38009A1E59 /* CAsyncImageView.m */,
 				451339DE15DB3012009A1E59 /* CTimelineTableCellView.h */,
 				451339DF15DB3012009A1E59 /* CTimelineTableCellView.m */,
+				45BB80A815DB759C0055EBA2 /* NSAttributedString+PostExtensins.h */,
+				45BB80A915DB759C0055EBA2 /* NSAttributedString+PostExtensins.m */,
 				4520B30115DA28E500B81172 /* Model */,
 				4520B30615DA28E500B81172 /* Prefix.pch */,
 				4520B30715DA28E500B81172 /* Support */,
@@ -765,6 +771,7 @@
 				4520B52015DB124200B81172 /* CPostWindowController.m in Sources */,
 				451339DC15DB2F38009A1E59 /* CAsyncImageView.m in Sources */,
 				451339E015DB3012009A1E59 /* CTimelineTableCellView.m in Sources */,
+				45BB80AA15DB759C0055EBA2 /* NSAttributedString+PostExtensins.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,12 +910,13 @@
 			isa = XCVersionGroup;
 			children = (
 				450A2FDE15DB6FC2002B93B1 /* 5.xcdatamodel */,
+				45BB80AC15DB76A60055EBA2 /* 6.xcdatamodel */,
 				4520B32515DA2BF800B81172 /* 2.xcdatamodel */,
 				4520B32615DA344E00B81172 /* 3.xcdatamodel */,
 				4520B33915DA399D00B81172 /* 4.xcdatamodel */,
 				4520B30315DA28E500B81172 /* 1.xcdatamodel */,
 			);
-			currentVersion = 450A2FDE15DB6FC2002B93B1 /* 5.xcdatamodel */;
+			currentVersion = 45BB80AC15DB76A60055EBA2 /* 6.xcdatamodel */;
 			path = AppFeed.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

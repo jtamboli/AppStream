@@ -19,5 +19,6 @@
 @dynamic text;
 @dynamic streams;
 @dynamic user;
+@dynamic attributedText;
 
 @end

@@ -56,7 +56,11 @@
     self.viewController = NULL;
 
 //    self.viewController = [[CTimelineViewController alloc] initWithStream:[CAppService sharedInstance].globalStreamEntity];
-    self.viewController = [[CMainViewController alloc] init];
+
+    [[CAppService sharedInstance] introduce:^{
+        self.viewController = [[CMainViewController alloc] init];
+        }];
+
     }
 
 @end

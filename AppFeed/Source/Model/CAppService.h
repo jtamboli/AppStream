@@ -9,23 +9,27 @@
 #import <Foundation/Foundation.h>
 
 @class CStream;
+@class CUser;
 
 @interface CAppService : NSObject
 
 @property (readwrite, nonatomic, strong) NSString *client_id;
 @property (readwrite, nonatomic, strong) NSString *access_token;
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) CStream *globalStreamEntity; // TODO These are MOC specific and that's _probably_ bad.
-@property (readonly, strong, nonatomic) CStream *myStreamEntity; // TODO These are MOC specific and that's _probably_ bad.
-@property (readonly, strong, nonatomic) CStream *myPostsStreamEntity; // TODO These are MOC specific and that's _probably_ bad.
-@property (readonly, strong, nonatomic) CStream *mentionsStreamEntity; // TODO These are MOC specific and that's _probably_ bad.
+@property (readonly, nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (readonly, nonatomic, strong) CStream *globalStreamEntity; // TODO These are MOC specific and that's _probably_ bad.
+@property (readonly, nonatomic, strong) CStream *myStreamEntity; // TODO These are MOC specific and that's _probably_ bad.
+@property (readonly, nonatomic, strong) CStream *myPostsStreamEntity; // TODO These are MOC specific and that's _probably_ bad.
+@property (readonly, nonatomic, strong) CStream *mentionsStreamEntity; // TODO These are MOC specific and that's _probably_ bad.
+@property (readonly, nonatomic, strong) CUser *me;
 
 + (CAppService *)sharedInstance;
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender;
 
 - (void)retrievePostsForStream:(CStream *)inStream options:(NSDictionary *)inOptions success:(void (^)(NSArray *))inSuccessHandler;
+
+- (void)introduce:(void (^)(void))inSuccessHandler;
 
 - (void)post:(NSString *)inText success:(void (^)(void))inSuccessHandler;
 

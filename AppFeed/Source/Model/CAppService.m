@@ -16,6 +16,7 @@
 #import "CFormEncodingSerialization.h"
 #import "NSDate_InternetDateExtensions.h"
 #import "CCoreDataManager.h"
+#import "NSAttributedString+PostExtensins.h"
 
 // See: https://github.com/appdotnet/api-spec
 
@@ -23,6 +24,7 @@ static CAppService *gSharedInstance = NULL;
 
 @interface CAppService ()
 @property (readwrite, nonatomic, strong) CCoreDataManager *coreDataManager;
+@property (readwrite, nonatomic, strong) CUser *me;
 @end
 
 #pragma mark -
@@ -298,6 +300,7 @@ static CAppService *gSharedInstance = NULL;
             thePost.text = inJSON[@"text"] != [NSNull null] ? inJSON[@"text"] : NULL;
             thePost.posted = [NSDate dateWithISO8601String:inJSON[@"created_at"]];
             thePost.blob = inJSON;
+            thePost.attributedText = [NSAttributedString attributedStringWithPost:thePost];
 
             NSString *theUserID = [inJSON valueForKeyPath:@"user.id"];
             CPost *theUser = [theUsersByID objectForKey:theUserID];
@@ -315,6 +318,39 @@ static CAppService *gSharedInstance = NULL;
     }
 
 #pragma mark -
+
+- (void)introduce:(void (^)(void))inSuccessHandler;
+    {
+    NSURL *theURL = [NSURL URLWithString:@"https://alpha-api.app.net/stream/0/users/me"];
+
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:theURL];
+
+    NSString *theAuthorizationValue = [NSString stringWithFormat:@"Bearer %@", self.access_token];
+    [theRequest setValue:theAuthorizationValue forHTTPHeaderField:@"Authorization"];
+
+    [NSURLConnection sendAsynchronousRequest:theRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        NSLog(@"%ld", ((NSHTTPURLResponse *)response).statusCode);
+        NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+        NSLog(@"%@", error);
+
+        if (((NSHTTPURLResponse *)response).statusCode == 200)
+            {
+            NSError *theError = NULL;
+            NSDictionary *theUsersJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:&theError];
+            NSArray *theUsers = [self updateUsers:[NSSet setWithObject:theUsersJSON]];
+            CUser *theUser = [theUsers lastObject];
+            theUser.me = YES;
+            NSLog(@"%@", theUser);
+//            self.me = theUser;
+
+            if (inSuccessHandler)
+                {
+                inSuccessHandler();
+                }
+            }
+        }];
+
+    }
 
 - (void)post:(NSString *)inText success:(void (^)(void))inSuccessHandler
     {
