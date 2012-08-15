@@ -10,9 +10,11 @@
 
 #import "CMainWindowController.h"
 #import "CAppService.h"
+#import "CPostWindowController.h"
 
 @interface CAppDelegate ()
-@property (readwrite, strong, nonatomic) NSWindowController *mainWindowController;
+@property (readwrite, nonatomic, strong) NSWindowController *mainWindowController;
+@property (readwrite, nonatomic, strong) CPostWindowController *postWindowController;
 @end
 
 @implementation CAppDelegate
@@ -20,7 +22,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
     {
     self.mainWindowController = [[CMainWindowController alloc] init];
-    [self.mainWindowController.window orderFront:NULL];
+    [self.mainWindowController.window makeKeyAndOrderFront:NULL];
 
 //    NSUserNotification *theNotification = [[NSUserNotification alloc] init];
 //    theNotification.title = @"Hello world (2)";
@@ -30,6 +32,13 @@
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
     {
     return([[CAppService sharedInstance] applicationShouldTerminate:sender]);
+    }
+
+- (IBAction)newDocument:(id)sender
+    {
+    self.postWindowController = [[CPostWindowController alloc] init];
+    [self.postWindowController.window makeKeyAndOrderFront:self.postWindowController];
+
     }
 
 //// Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.

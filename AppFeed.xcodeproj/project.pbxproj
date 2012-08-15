@@ -85,6 +85,8 @@
 		4520B4FD15DAD38400B81172 /* CHumanDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B4B015DAD38400B81172 /* CHumanDateFormatter.m */; };
 		4520B4FE15DAD38400B81172 /* CNumberToStringValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B4B215DAD38400B81172 /* CNumberToStringValueTransformer.m */; };
 		4520B4FF15DAD38400B81172 /* CYAKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B4B515DAD38400B81172 /* CYAKeychain.m */; };
+		4520B52015DB124200B81172 /* CPostWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B51E15DB124200B81172 /* CPostWindowController.m */; };
+		4520B52115DB124200B81172 /* CPostWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520B51F15DB124200B81172 /* CPostWindowController.xib */; };
 		45DAA30E15D8B26300459C51 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA30D15D8B26300459C51 /* Cocoa.framework */; };
 		45DAA35B15D8B61E00459C51 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA35415D8B3AE00459C51 /* WebKit.framework */; };
 /* End PBXBuildFile section */
@@ -243,6 +245,9 @@
 		4520B4B215DAD38400B81172 /* CNumberToStringValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNumberToStringValueTransformer.m; sourceTree = "<group>"; };
 		4520B4B415DAD38400B81172 /* CYAKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYAKeychain.h; sourceTree = "<group>"; };
 		4520B4B515DAD38400B81172 /* CYAKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYAKeychain.m; sourceTree = "<group>"; };
+		4520B51D15DB124200B81172 /* CPostWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPostWindowController.h; sourceTree = "<group>"; };
+		4520B51E15DB124200B81172 /* CPostWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPostWindowController.m; sourceTree = "<group>"; };
+		4520B51F15DB124200B81172 /* CPostWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPostWindowController.xib; sourceTree = "<group>"; };
 		45DAA30915D8B26300459C51 /* AppFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DAA30D15D8B26300459C51 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		45DAA31015D8B26300459C51 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -307,6 +312,9 @@
 				4520B2FD15DA28E500B81172 /* CTimelineViewController.h */,
 				4520B2FE15DA28E500B81172 /* CTimelineViewController.m */,
 				4520B2FF15DA28E500B81172 /* CTimelineViewController.xib */,
+				4520B51D15DB124200B81172 /* CPostWindowController.h */,
+				4520B51E15DB124200B81172 /* CPostWindowController.m */,
+				4520B51F15DB124200B81172 /* CPostWindowController.xib */,
 				4520B30115DA28E500B81172 /* Model */,
 				4520B30615DA28E500B81172 /* Prefix.pch */,
 				4520B30715DA28E500B81172 /* Support */,
@@ -662,6 +670,7 @@
 				4520B31915DA28E500B81172 /* CTimelineViewController.xib in Resources */,
 				4520B32215DA290200B81172 /* MainWindow.xib in Resources */,
 				4520B34215DA3D0000B81172 /* CMainViewController.xib in Resources */,
+				4520B52115DB124200B81172 /* CPostWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +751,7 @@
 				4520B4FD15DAD38400B81172 /* CHumanDateFormatter.m in Sources */,
 				4520B4FE15DAD38400B81172 /* CNumberToStringValueTransformer.m in Sources */,
 				4520B4FF15DAD38400B81172 /* CYAKeychain.m in Sources */,
+				4520B52015DB124200B81172 /* CPostWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

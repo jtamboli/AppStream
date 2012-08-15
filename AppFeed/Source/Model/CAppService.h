@@ -27,5 +27,6 @@
 
 - (void)retrievePostsForStream:(CStream *)inStream options:(NSDictionary *)inOptions success:(void (^)(NSArray *))inSuccessHandler;
 
+- (void)post:(NSString *)inText success:(void (^)(void))inSuccessHandler;
 
 @end

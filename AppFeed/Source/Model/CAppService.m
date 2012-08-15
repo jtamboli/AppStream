@@ -13,6 +13,7 @@
 #import "CPost.h"
 #import "CUser.h"
 
+#import "CFormEncodingSerialization.h"
 #import "NSDate_InternetDateExtensions.h"
 #import "CCoreDataManager.h"
 
@@ -411,6 +412,56 @@ static CAppService *gSharedInstance = NULL;
         }];
 
     return(theObjects);
+    }
+
+#pragma mark -
+
+- (void)post:(NSString *)inText success:(void (^)(void))inSuccessHandler
+    {
+    NSDictionary *theDictionary = @{
+        @"text": inText,
+        };
+
+    NSError *theError = NULL;
+
+    NSData *theData = [CFormEncodingSerialization dataWithDictionary:theDictionary error:&theError];
+
+    NSURL *theURL = [NSURL URLWithString:@"https://alpha-api.app.net/stream/0/posts"];
+
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:theURL];
+    [theRequest setHTTPMethod:@"POST"];
+
+    NSString *theAuthorizationValue = [NSString stringWithFormat:@"Bearer %@", self.access_token];
+    [theRequest setValue:theAuthorizationValue forHTTPHeaderField:@"Authorization"];
+
+    [theRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [theRequest setHTTPBody:theData];
+
+    [NSURLConnection sendAsynchronousRequest:theRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        NSLog(@"%ld", ((NSHTTPURLResponse *)response).statusCode);
+        NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+        NSLog(@"%@", error);
+
+        if (((NSHTTPURLResponse *)response).statusCode == 200)
+            {
+            NSError *theError = NULL;
+            NSDictionary *thePostJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:&theError];
+            NSArray *thePosts = [self updatePosts:[NSSet setWithObject:thePostJSON]];
+            CPost *thePost = [thePosts lastObject];
+
+            [self.managedObjectContext performBlockAndWait:^{
+                [thePost addStreamsObject:self.myPostsStreamEntity];
+
+                }];
+
+            if (inSuccessHandler)
+                {
+                inSuccessHandler();
+                }
+            }
+
+
+        }];
     }
 
 @end
