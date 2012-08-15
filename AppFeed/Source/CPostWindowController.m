@@ -31,8 +31,6 @@
 
 - (IBAction)post:(id)sender
     {
-    NSLog(@"POST");
-    
     [[CAppService sharedInstance] post:self.text success:^{
         [self.window orderOut:NULL];
         }];

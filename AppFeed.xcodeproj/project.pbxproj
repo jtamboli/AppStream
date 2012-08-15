@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		451339DC15DB2F38009A1E59 /* CAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 451339DB15DB2F38009A1E59 /* CAsyncImageView.m */; };
+		451339E015DB3012009A1E59 /* CTimelineTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 451339DF15DB3012009A1E59 /* CTimelineTableCellView.m */; };
 		4520B31015DA28E500B81172 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4520B2EC15DA28E500B81172 /* Credits.rtf */; };
 		4520B31115DA28E500B81172 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4520B2EE15DA28E500B81172 /* InfoPlist.strings */; };
 		4520B31215DA28E500B81172 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520B2F215DA28E500B81172 /* MainMenu.xib */; };
@@ -92,6 +94,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		451339DA15DB2F38009A1E59 /* CAsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAsyncImageView.h; sourceTree = "<group>"; };
+		451339DB15DB2F38009A1E59 /* CAsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAsyncImageView.m; sourceTree = "<group>"; };
+		451339DE15DB3012009A1E59 /* CTimelineTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTimelineTableCellView.h; sourceTree = "<group>"; };
+		451339DF15DB3012009A1E59 /* CTimelineTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTimelineTableCellView.m; sourceTree = "<group>"; };
 		4520B2ED15DA28E500B81172 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		4520B2EF15DA28E500B81172 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4520B2F315DA28E500B81172 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -315,6 +321,10 @@
 				4520B51D15DB124200B81172 /* CPostWindowController.h */,
 				4520B51E15DB124200B81172 /* CPostWindowController.m */,
 				4520B51F15DB124200B81172 /* CPostWindowController.xib */,
+				451339DA15DB2F38009A1E59 /* CAsyncImageView.h */,
+				451339DB15DB2F38009A1E59 /* CAsyncImageView.m */,
+				451339DE15DB3012009A1E59 /* CTimelineTableCellView.h */,
+				451339DF15DB3012009A1E59 /* CTimelineTableCellView.m */,
 				4520B30115DA28E500B81172 /* Model */,
 				4520B30615DA28E500B81172 /* Prefix.pch */,
 				4520B30715DA28E500B81172 /* Support */,
@@ -752,6 +762,8 @@
 				4520B4FE15DAD38400B81172 /* CNumberToStringValueTransformer.m in Sources */,
 				4520B4FF15DAD38400B81172 /* CYAKeychain.m in Sources */,
 				4520B52015DB124200B81172 /* CPostWindowController.m in Sources */,
+				451339DC15DB2F38009A1E59 /* CAsyncImageView.m in Sources */,
+				451339E015DB3012009A1E59 /* CTimelineTableCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
