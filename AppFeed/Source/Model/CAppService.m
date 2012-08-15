@@ -166,12 +166,12 @@ static CAppService *gSharedInstance = NULL;
 
 - (CStream *)mentionsStreamEntity
     {
-    return([self streamForPath:@"users/839/mentions"]);
+    return([self streamForPath:@"users/me/mentions"]);
     }
 
 - (CStream *)myPostsStreamEntity
     {
-    return([self streamForPath:@"users/839/posts"]);
+    return([self streamForPath:@"users/me/posts"]);
     }
 
 
