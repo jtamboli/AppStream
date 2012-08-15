@@ -16,7 +16,6 @@
     <entity name="User" representedClassName="CUser" syncable="YES">
         <attribute name="blob" attributeType="Transformable" syncable="YES"/>
         <attribute name="externalIdentifier" attributeType="String" syncable="YES"/>
-        <attribute name="me" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="user" inverseEntity="Post" syncable="YES"/>
@@ -24,6 +23,6 @@
     <elements>
         <element name="Post" positionX="160" positionY="192" width="128" height="135"/>
         <element name="Stream" positionX="160" positionY="192" width="128" height="90"/>
-        <element name="User" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="User" positionX="160" positionY="192" width="128" height="120"/>
     </elements>
 </model>

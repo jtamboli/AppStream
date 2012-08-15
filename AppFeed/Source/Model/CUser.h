@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * username;
 @property (nonatomic, retain) NSSet *posts;
+@property (nonatomic, assign) BOOL me;
 @end
 
 @interface CUser (CoreDataGeneratedAccessors)

@@ -17,5 +17,6 @@
 @dynamic name;
 @dynamic username;
 @dynamic posts;
+@dynamic me;
 
 @end
