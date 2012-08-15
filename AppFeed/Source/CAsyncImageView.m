@@ -14,7 +14,7 @@
 
 @implementation CAsyncImageView
 
-// TODO: this is a really crude way of load images from web asynchronously.
+// TODO: this is a really crude way of loading images from web asynchronously.
 
 - (void)loadRequest:(NSURLRequest *)inRequest;
     {

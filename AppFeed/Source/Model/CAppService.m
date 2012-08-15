@@ -451,6 +451,8 @@ static CAppService *gSharedInstance = NULL;
 
             [self.managedObjectContext performBlockAndWait:^{
                 [thePost addStreamsObject:self.myPostsStreamEntity];
+                [thePost addStreamsObject:self.globalStreamEntity];
+                [thePost addStreamsObject:self.myStreamEntity];
 
                 }];
 
