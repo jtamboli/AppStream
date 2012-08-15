@@ -23,13 +23,13 @@ A minimal Mac OS X app.net client
 
 * UI is ass. Not too interested in UI until basic network and database functionality is there.
 * Overloading of the term stream: https://alpha.app.net/schwa/post/52516 - this is a problem in code. As real app.net streams come online I expect a refactor will be needed.
-* Posting
 * Deleting
 * User Lists
 * User Info
 * Database will grow and grow. Need to prune at some point.
-* Refresh
 * Code is being "sketched out" and is far from well designed. Expect a lot of churn/refactoring
+* <del>Refresh</del> (implemented)
+* <del>Posting</del> (implemented)
 
 ## FEATURE IDEAS
 
