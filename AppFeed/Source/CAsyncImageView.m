@@ -9,6 +9,7 @@
 #import "CAsyncImageView.h"
 
 @interface CAsyncImageView ()
+@property (readwrite, nonatomic, strong) NSURLRequest *request;
 @end
 
 @implementation CAsyncImageView
@@ -17,9 +18,14 @@
 
 - (void)loadRequest:(NSURLRequest *)inRequest;
     {
+    self.request = inRequest;
+
     [NSURLConnection sendAsynchronousRequest:inRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        NSImage *theImage = [[NSImage alloc] initWithData:data];
-        self.image = theImage;
+        if (self.request == inRequest)
+            {
+            NSImage *theImage = [[NSImage alloc] initWithData:data];
+            self.image = theImage;
+            }
         }];
     }
 

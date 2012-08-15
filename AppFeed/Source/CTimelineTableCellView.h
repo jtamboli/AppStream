@@ -10,4 +10,6 @@
 
 @interface CTimelineTableCellView : NSTableCellView
 
+- (void)reset;
+
 @end

@@ -10,8 +10,9 @@
 
 #import "CAppService.h"
 #import "CStream.h"
+#import "CTimelineTableCellView.h"
 
-@interface CTimelineViewController ()
+@interface CTimelineViewController () <NSTableViewDelegate>
 
 @end
 
@@ -38,6 +39,15 @@
 - (NSManagedObjectContext *)managedObjectContext
     {
     return([CAppService sharedInstance].managedObjectContext);
+    }
+
+- (void)tableView:(NSTableView *)tableView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row NS_AVAILABLE_MAC(10_7);
+    {
+    for (int N = 0; N != rowView.numberOfColumns; ++N)
+        {
+        CTimelineTableCellView *theView = [rowView viewAtColumn:N];
+        [theView reset];
+        }
     }
 
 @end

@@ -34,4 +34,9 @@
         }
     }
 
+- (void)reset
+    {
+    self.avatarImageView.image = NULL;
+    }
+
 @end
