@@ -1,4 +1,4 @@
-# AppFeed
+# AppStream
 
 A minimal Mac OS X app.net client
 
@@ -10,8 +10,9 @@ A minimal Mac OS X app.net client
 
 ## HOWTO
 
-* Create a app.net client app.
-* Use "x-com-toxicsoftware-appfeed:///" as the Callback URL.
+* <del>Create a app.net client app.</del>
+* <del>Use "x-com-toxicsoftware-appstream:///" as the Callback URL.</del>
+* NEW: I've embedded a client_id into the source. You do not need to make your own app on app.net.
 * Don't forget to do a submodule update!
 * Build and run the app, follow the instructions for setting the client id
 
