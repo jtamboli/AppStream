@@ -13,13 +13,16 @@
 #import "CTimelineTableCellView.h"
 #import "CAppDelegate.h"
 #import "CPostWindowController.h"
+#import "CTimelineTableView.h"
+#import "CPost.h"
 
-@interface CTimelineViewController () <NSTableViewDelegate>
-@property (readonly, nonatomic, strong) NSPredicate *filterPredicate;
-@property (readonly, nonatomic, strong) NSArray *sortDescriptors;
+@interface CTimelineViewController () <NSTableViewDelegate, CTimelineTableViewDelegate>
+@property (readwrite, nonatomic, strong) NSPredicate *filterPredicate;
+@property (readwrite, nonatomic, strong) NSArray *sortDescriptors;
+@property (readwrite, nonatomic, strong) CPost *selectedPost;
 @property (readwrite, nonatomic, assign) IBOutlet NSTableView *tableView;
 @property (readwrite, nonatomic, assign) IBOutlet NSArrayController *postsArrayController;
-
+@property (readwrite, nonatomic, assign) IBOutlet NSMenu *postMenu;
 @end
 
 @implementation CTimelineViewController
@@ -63,8 +66,23 @@
     CPostWindowController *thePostWindowController = [[CPostWindowController alloc] initWithSubjectPost:thePost];
     [thePostWindowController.window makeKeyAndOrderFront:NULL];
     [CAppDelegate sharedInstance].postWindowController = thePostWindowController;
+    }
 
+- (NSMenu *)timelineTableView:(CTimelineTableView *)inTableView menuForEvent:(NSEvent *)event;
+    {
+    // TODO this KVO on array controller for this!
+    self.selectedPost = [self.postsArrayController.selectedObjects lastObject];
 
+    return(self.postMenu);
+    }
+
+- (IBAction)bookmark:(id)sender
+    {
+    self.selectedPost = [self.postsArrayController.selectedObjects lastObject];
+
+    [self.managedObjectContext performBlockAndWait:^{
+        self.selectedPost.label = self.selectedPost.label.length == 0 ? @"bookmark" : NULL;
+        }];
     }
 
 @end

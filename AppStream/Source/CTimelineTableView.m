@@ -10,9 +10,11 @@
 
 @implementation CTimelineTableView
 
-//- (IBAction)reply:(id)sender
-//    {
-//    NSLog(@"REPLY");
-//    }
+@dynamic delegate;
+
+- (NSMenu *)menuForEvent:(NSEvent *)event;
+    {
+    return([self.delegate timelineTableView:self menuForEvent:event]);
+    }
 
 @end

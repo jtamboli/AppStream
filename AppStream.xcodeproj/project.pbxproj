@@ -273,6 +273,7 @@
 		45DAA33615D8B26400459C51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45DAA35415D8B3AE00459C51 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		45EFEE3215DCC5D000DBAB35 /* 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = 7.xcdatamodel; sourceTree = "<group>"; };
+		45EFEE3415DCD76800DBAB35 /* 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -920,12 +921,13 @@
 				450A2FDE15DB6FC2002B93B1 /* 5.xcdatamodel */,
 				45BB80AC15DB76A60055EBA2 /* 6.xcdatamodel */,
 				45EFEE3215DCC5D000DBAB35 /* 7.xcdatamodel */,
+				45EFEE3415DCD76800DBAB35 /* 8.xcdatamodel */,
 				4520B32515DA2BF800B81172 /* 2.xcdatamodel */,
 				4520B32615DA344E00B81172 /* 3.xcdatamodel */,
 				4520B33915DA399D00B81172 /* 4.xcdatamodel */,
 				4520B30315DA28E500B81172 /* 1.xcdatamodel */,
 			);
-			currentVersion = 45EFEE3215DCC5D000DBAB35 /* 7.xcdatamodel */;
+			currentVersion = 45EFEE3415DCD76800DBAB35 /* 8.xcdatamodel */;
 			path = AppStream.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -21,5 +21,6 @@
 @dynamic user;
 @dynamic attributedText;
 @dynamic notified;
+@dynamic label;
 
 @end

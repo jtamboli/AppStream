@@ -21,6 +21,7 @@
 @property (nonatomic, retain) CUser *user;
 @property (nonatomic, retain) NSAttributedString *attributedText;
 @property (nonatomic, assign) BOOL notified;
+@property (nonatomic, retain) NSString *label;
 @end
 
 @interface CPost (CoreDataGeneratedAccessors)

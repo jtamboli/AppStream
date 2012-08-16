@@ -8,6 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface CTimelineTableView : NSTableView
+@protocol CTimelineTableViewDelegate;
 
+@interface CTimelineTableView : NSTableView
+@property (readwrite, nonatomic, assign) id <NSTableViewDelegate, CTimelineTableViewDelegate> delegate;
+@end
+
+@protocol CTimelineTableViewDelegate
+@required
+- (NSMenu *)timelineTableView:(CTimelineTableView *)inTableView menuForEvent:(NSEvent *)event;
 @end
