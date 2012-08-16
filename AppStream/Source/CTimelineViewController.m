@@ -15,8 +15,8 @@
 #import "CPostWindowController.h"
 #import "CTimelineTableView.h"
 #import "CPost.h"
+#import "CUser.h"
 #import "NSManagedObjectContext+ObjectControllers.h"
-
 
 @interface CTimelineViewController () <NSTableViewDelegate, CTimelineTableViewDelegate>
 @property (readwrite, nonatomic, strong) NSPredicate *filterPredicate;
@@ -52,14 +52,7 @@
     return([CAppService sharedInstance].managedObjectContext);
     }
 
-- (void)tableView:(NSTableView *)tableView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row NS_AVAILABLE_MAC(10_7);
-    {
-    for (int N = 0; N != rowView.numberOfColumns; ++N)
-        {
-        CTimelineTableCellView *theView = [rowView viewAtColumn:N];
-        [theView reset];
-        }
-    }
+#pragma mark -
 
 - (IBAction)reply:(id)sender
     {
@@ -68,14 +61,6 @@
     CPostWindowController *thePostWindowController = [[CPostWindowController alloc] initWithSubjectPost:thePost];
     [thePostWindowController.window makeKeyAndOrderFront:NULL];
     [CAppDelegate sharedInstance].postWindowController = thePostWindowController;
-    }
-
-- (NSMenu *)timelineTableView:(CTimelineTableView *)inTableView menuForEvent:(NSEvent *)event;
-    {
-    // TODO this KVO on array controller for this!
-    self.selectedPost = [self.postsArrayController.selectedObjects lastObject];
-
-    return(self.postMenu);
     }
 
 - (IBAction)bookmark:(id)sender
@@ -88,6 +73,38 @@
 
 
     [self.managedObjectContext refetchObjectControllers];
+    }
+
+- (IBAction)delete:(id)sender
+    {
+    NSLog(@"Delete not implemented yet.");
+    }
+
+- (IBAction)open:(id)sender
+    {
+    self.selectedPost = [self.postsArrayController.selectedObjects lastObject];
+
+    NSURL *theURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://alpha.app.net/%@/post/%@", self.selectedPost.user.username, self.selectedPost.externalIdentifier]];
+    [[NSWorkspace sharedWorkspace] openURL:theURL];
+    }
+
+#pragma mark -
+
+- (void)tableView:(NSTableView *)tableView didAddRowView:(NSTableRowView *)rowView forRow:(NSInteger)row NS_AVAILABLE_MAC(10_7);
+    {
+    for (int N = 0; N != rowView.numberOfColumns; ++N)
+        {
+        CTimelineTableCellView *theView = [rowView viewAtColumn:N];
+        [theView reset];
+        }
+    }
+
+- (NSMenu *)timelineTableView:(CTimelineTableView *)inTableView menuForEvent:(NSEvent *)event;
+    {
+    // TODO this KVO on array controller for this!
+    self.selectedPost = [self.postsArrayController.selectedObjects lastObject];
+
+    return(self.postMenu);
     }
 
 @end
