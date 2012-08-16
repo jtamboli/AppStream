@@ -78,6 +78,14 @@
             @"name": @"Bookmarks",
             @"predicate": [NSPredicate predicateWithFormat:@"label = 'bookmark'"],
         },
+        @{
+            @"name": @"#AppStream",
+            @"predicate": [NSPredicate predicateWithFormat:@"text CONTAINS '#AppStream'"],
+        },
+        @{
+            @"name": @"schwa",
+            @"predicate": [NSPredicate predicateWithFormat:@"text CONTAINS 'schwa'"],
+        },
         ];
 
     NSMutableArray *theViewControllers = [NSMutableArray array];
