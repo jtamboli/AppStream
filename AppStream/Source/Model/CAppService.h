@@ -28,6 +28,7 @@
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender;
 
+- (void)retrieveAllStreams;
 - (void)retrievePostsForStream:(CStream *)inStream options:(NSDictionary *)inOptions success:(void (^)(NSArray *))inSuccessHandler;
 
 - (void)introduce:(void (^)(void))inSuccessHandler;

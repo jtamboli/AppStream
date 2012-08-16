@@ -25,6 +25,8 @@ static CAppService *gSharedInstance = NULL;
 @interface CAppService ()
 @property (readwrite, nonatomic, strong) CCoreDataManager *coreDataManager;
 @property (readwrite, nonatomic, strong) CUser *me;
+@property (readwrite, nonatomic, assign) NSTimer *timer;
+
 @end
 
 #pragma mark -
@@ -66,6 +68,8 @@ static CAppService *gSharedInstance = NULL;
                 exit(-1);
                 }
             }
+
+        _timer = [NSTimer scheduledTimerWithTimeInterval:60.0 target:self selector:@selector(timer:) userInfo:NULL repeats:YES];
         }
     return self;
     }
@@ -181,11 +185,24 @@ static CAppService *gSharedInstance = NULL;
     return([self streamForPath:@"users/me/posts"]);
     }
 
-
-
 #pragma mark -
 
-// https://alpha-api.app.net/stream/0/posts/stream
+- (void)retrieveAllStreams;
+    {
+    NSLog(@"Retrieve all.");
+
+    NSArray *theStreams = @[
+        self.globalStreamEntity,
+        self.myStreamEntity,
+        self.mentionsStreamEntity,
+        self.myPostsStreamEntity,
+        ];
+
+    for (CStream *theStream in theStreams)
+        {
+        [self retrievePostsForStream:theStream options:NULL success:NULL];
+        }
+    }
 
 - (void)retrievePostsForStream:(CStream *)inStream options:(NSDictionary *)inOptions success:(void (^)(NSArray *))inSuccessHandler;
     {
@@ -213,10 +230,7 @@ static CAppService *gSharedInstance = NULL;
             for (CPost *thePost in thePosts)
                 {
                 [thePost addStreamsObject:inStream];
-
-//                [thePost setValue:self.globalStreamEntity forKey:@"stream"];
                 }
-
             }];
 
         if (inSuccessHandler)
@@ -412,6 +426,11 @@ static CAppService *gSharedInstance = NULL;
 
 
         }];
+    }
+
+- (void)timer:(id)inSender
+    {
+    [self retrieveAllStreams];
     }
 
 @end
