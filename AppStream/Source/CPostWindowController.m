@@ -10,6 +10,7 @@
 
 #import "CAppService.h"
 #import "CPost.h"
+#import "CUser.h"
 
 @interface CPostWindowController ()
 @property (readwrite, nonatomic, strong) CPost *subjectPost;
@@ -32,7 +33,7 @@
         {
         _subjectPost = inSubjectPost;
 
-        _text = @"@schwa";
+        _text = [NSString stringWithFormat:@"@%@ ", inSubjectPost.user.username];
         }
     return self;
     }
