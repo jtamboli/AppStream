@@ -443,6 +443,36 @@ static CAppService *gSharedInstance = NULL;
         }];
     }
 
+- (void)deletePost:(CPost *)inPost success:(void (^)(void))inSuccessHandler
+    {
+    NSURL *theURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://alpha-api.app.net/stream/0/posts/%@", inPost.externalIdentifier]];
+
+    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:theURL];
+    [theRequest setHTTPMethod:@"DELETE"];
+
+    NSString *theAuthorizationValue = [NSString stringWithFormat:@"Bearer %@", self.access_token];
+    [theRequest setValue:theAuthorizationValue forHTTPHeaderField:@"Authorization"];
+
+    [NSURLConnection sendAsynchronousRequest:theRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+
+        if (((NSHTTPURLResponse *)response).statusCode == 200)
+            {
+            [self.managedObjectContext performBlockAndWait:^{
+
+                [self.managedObjectContext deleteObject:inPost];
+
+                }];
+
+            if (inSuccessHandler)
+                {
+                inSuccessHandler();
+                }
+            }
+
+
+        }];
+    }
+
 - (void)timer:(id)inSender
     {
     [self retrieveAllStreams];

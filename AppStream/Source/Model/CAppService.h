@@ -36,4 +36,6 @@
 - (void)post:(NSString *)inText success:(void (^)(void))inSuccessHandler;
 - (void)post:(NSString *)inText replyTo:(CPost *)inPost success:(void (^)(void))inSuccessHandler;
 
+- (void)deletePost:(CPost *)inPost success:(void (^)(void))inSuccessHandler;
+
 @end

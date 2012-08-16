@@ -77,7 +77,12 @@
 
 - (IBAction)delete:(id)sender
     {
-    NSLog(@"Delete not implemented yet.");
+    self.selectedPost = [self.postsArrayController.selectedObjects lastObject];
+
+    [[CAppService sharedInstance] deletePost:self.selectedPost success:^{
+
+        self.selectedPost = NULL;
+        }];
     }
 
 - (IBAction)open:(id)sender
