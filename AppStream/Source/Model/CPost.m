@@ -20,5 +20,6 @@
 @dynamic streams;
 @dynamic user;
 @dynamic attributedText;
+@dynamic notified;
 
 @end

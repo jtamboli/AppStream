@@ -49,7 +49,7 @@ static CAppService *gSharedInstance = NULL;
     {
     if ((self = [super init]) != NULL)
         {
-        _client_id = @"nzhPynUHDd6RmzYsrGRPMA426LK4tMtS";
+        _client_id = CLIENT_ID;
 
         if (_client_id.length == 0)
             {
@@ -230,8 +230,23 @@ static CAppService *gSharedInstance = NULL;
             for (CPost *thePost in thePosts)
                 {
                 [thePost addStreamsObject:inStream];
+
+                if (thePost.notified == NO)
+                    {
+                    #if USER_NOTIFICATIONS_ENABLED == 1
+                    NSUserNotification *theNotification = [[NSUserNotification alloc] init];
+                    theNotification.title = thePost.text;
+                    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:theNotification];
+                    #endif /* USER_NOTIFICATIONS_ENABLED == 1 */
+
+                    thePost.notified = YES;
+                    }
                 }
             }];
+
+
+
+
 
         if (inSuccessHandler)
             {

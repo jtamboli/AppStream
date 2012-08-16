@@ -14,6 +14,8 @@
 
 @interface CMainViewController ()
 @property (readwrite, nonatomic, assign) IBOutlet NSTabView *tabView;
+@property (readwrite, nonatomic, assign) IBOutlet NSArrayController *arrayController;
+@property (readwrite, nonatomic, assign) NSIndexSet *selectionIndexes;
 @end
 
 @implementation CMainViewController
@@ -26,10 +28,23 @@
     return self;
     }
 
-- (IBAction)refresh:(id)sender
+#pragma mark -
+
+- (void)setSelectionIndexes:(NSIndexSet *)selectionIndexes
     {
-    [[CAppService sharedInstance] retrieveAllStreams];
+    NSParameterAssert(selectionIndexes.count == 1);
+
+    _selectionIndexes = selectionIndexes;
+
+    [self.tabView selectTabViewItemAtIndex:selectionIndexes.lastIndex];
     }
+
+- (NSManagedObjectContext *)managedObjectContext
+    {
+    return([CAppService sharedInstance].managedObjectContext);
+    }
+
+#pragma mark -
 
 - (void)loadView;
     {
@@ -62,5 +77,13 @@
         }
 
     }
+
+#pragma mark -
+
+- (IBAction)refresh:(id)sender
+    {
+    [[CAppService sharedInstance] retrieveAllStreams];
+    }
+
 
 @end

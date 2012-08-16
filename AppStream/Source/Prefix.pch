@@ -6,4 +6,7 @@
     #import <Cocoa/Cocoa.h>
 
     #import "TouchcodePrefix.h"
+
+    #define USER_NOTIFICATIONS_ENABLED NO
+    #define CLIENT_ID @"nzhPynUHDd6RmzYsrGRPMA426LK4tMtS"
 #endif

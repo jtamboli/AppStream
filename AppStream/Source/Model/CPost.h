@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSSet *streams;
 @property (nonatomic, retain) CUser *user;
 @property (nonatomic, retain) NSAttributedString *attributedText;
+@property (nonatomic, assign) BOOL notified;
 @end
 
 @interface CPost (CoreDataGeneratedAccessors)
