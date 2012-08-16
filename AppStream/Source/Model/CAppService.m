@@ -200,9 +200,6 @@ static CAppService *gSharedInstance = NULL;
     [theRequest setValue:theAuthorizationValue forHTTPHeaderField:@"Authorization"];
 
     [NSURLConnection sendAsynchronousRequest:theRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-//        NSLog(@"%ld", ((NSHTTPURLResponse *)response).statusCode);
-//        NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-//        NSLog(@"%@", error);
 
         // TODO response validation
 
@@ -334,9 +331,6 @@ static CAppService *gSharedInstance = NULL;
     [theRequest setValue:theAuthorizationValue forHTTPHeaderField:@"Authorization"];
 
     [NSURLConnection sendAsynchronousRequest:theRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        NSLog(@"%ld", ((NSHTTPURLResponse *)response).statusCode);
-        NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-        NSLog(@"%@", error);
 
         if (((NSHTTPURLResponse *)response).statusCode == 200)
             {
@@ -345,7 +339,6 @@ static CAppService *gSharedInstance = NULL;
             NSArray *theUsers = [self updateUsers:[NSSet setWithObject:theUsersJSON]];
             CUser *theUser = [theUsers lastObject];
             theUser.me = YES;
-            NSLog(@"%@", theUser);
 //            self.me = theUser;
 
             if (inSuccessHandler)
@@ -359,9 +352,26 @@ static CAppService *gSharedInstance = NULL;
 
 - (void)post:(NSString *)inText success:(void (^)(void))inSuccessHandler
     {
-    NSDictionary *theDictionary = @{
-        @"text": inText,
-        };
+    [self post:inText replyTo:NULL success:inSuccessHandler];
+    }
+
+- (void)post:(NSString *)inText replyTo:(CPost *)inPost success:(void (^)(void))inSuccessHandler
+    {
+    NSDictionary *theDictionary = NULL;
+    if (inPost == NULL)
+        {
+        theDictionary = @{
+            @"text": inText,
+            };
+        }
+    else
+        {
+        theDictionary = @{
+            @"text": inText,
+            @"reply_to": inPost.externalIdentifier,
+            };
+        }
+
 
     NSError *theError = NULL;
 
@@ -379,9 +389,6 @@ static CAppService *gSharedInstance = NULL;
     [theRequest setHTTPBody:theData];
 
     [NSURLConnection sendAsynchronousRequest:theRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-        NSLog(@"%ld", ((NSHTTPURLResponse *)response).statusCode);
-        NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-        NSLog(@"%@", error);
 
         if (((NSHTTPURLResponse *)response).statusCode == 200)
             {

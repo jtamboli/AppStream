@@ -13,11 +13,14 @@
 #import "CPostWindowController.h"
 
 @interface CAppDelegate ()
-@property (readwrite, nonatomic, strong) NSWindowController *mainWindowController;
-@property (readwrite, nonatomic, strong) CPostWindowController *postWindowController;
 @end
 
 @implementation CAppDelegate
+
++ (CAppDelegate *)sharedInstance;
+    {
+    return([NSApplication sharedApplication].delegate);
+    }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
     {

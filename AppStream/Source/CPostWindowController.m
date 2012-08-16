@@ -44,7 +44,7 @@
 
 - (IBAction)post:(id)sender
     {
-    [[CAppService sharedInstance] post:self.text success:^{
+    [[CAppService sharedInstance] post:self.text replyTo:self.subjectPost success:^{
         [self.window orderOut:NULL];
         }];
     }

@@ -8,8 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class CMainWindowController;
+@class CPostWindowController;
+
 @interface CAppDelegate : NSObject <NSApplicationDelegate>
 
-//- (IBAction)saveAction:(id)sender;
+@property (readwrite, nonatomic, strong) CMainWindowController *mainWindowController;
+@property (readwrite, nonatomic, strong) CPostWindowController *postWindowController;
+
++ (CAppDelegate *)sharedInstance;
 
 @end

@@ -11,11 +11,14 @@
 #import "CAppService.h"
 #import "CStream.h"
 #import "CTimelineTableCellView.h"
+#import "CAppDelegate.h"
+#import "CPostWindowController.h"
 
 @interface CTimelineViewController () <NSTableViewDelegate>
 @property (readonly, nonatomic, strong) NSPredicate *filterPredicate;
 @property (readonly, nonatomic, strong) NSArray *sortDescriptors;
-@property (readonly, nonatomic, strong) IBOutlet NSArrayController *postsArrayController;
+@property (readwrite, nonatomic, assign) IBOutlet NSTableView *tableView;
+@property (readwrite, nonatomic, assign) IBOutlet NSArrayController *postsArrayController;
 
 @end
 
@@ -36,10 +39,6 @@
     {
     [super loadView];
     //
-    NSLog(@">>> %@", self.view);
-    NSLog(@">>> %@", _postsArrayController);
-    NSLog(@">>> %@", self.postsArrayController);
-
     [[CAppService sharedInstance] retrievePostsForStream:self.stream options:NULL success:NULL];
     }
 
@@ -59,7 +58,13 @@
 
 - (IBAction)reply:(id)sender
     {
-    NSLog(@"REPLY: %@", self.postsArrayController);
+    CPost *thePost = [self.postsArrayController.selectedObjects lastObject];
+
+    CPostWindowController *thePostWindowController = [[CPostWindowController alloc] initWithSubjectPost:thePost];
+    [thePostWindowController.window makeKeyAndOrderFront:NULL];
+    [CAppDelegate sharedInstance].postWindowController = thePostWindowController;
+
+
     }
 
 @end

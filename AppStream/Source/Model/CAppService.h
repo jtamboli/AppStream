@@ -10,6 +10,7 @@
 
 @class CStream;
 @class CUser;
+@class CPost;
 
 @interface CAppService : NSObject
 
@@ -32,5 +33,6 @@
 - (void)introduce:(void (^)(void))inSuccessHandler;
 
 - (void)post:(NSString *)inText success:(void (^)(void))inSuccessHandler;
+- (void)post:(NSString *)inText replyTo:(CPost *)inPost success:(void (^)(void))inSuccessHandler;
 
 @end
