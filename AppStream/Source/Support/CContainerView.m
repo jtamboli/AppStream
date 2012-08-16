@@ -16,6 +16,11 @@
 
 @implementation CContainerView
 
+- (NSResponder *)nextResponder
+    {
+    return(self.viewController);
+    }
+
 - (void)setViewController:(NSViewController *)viewController
     {
     if (_viewController != viewController)

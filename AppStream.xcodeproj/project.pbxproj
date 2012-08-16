@@ -89,6 +89,7 @@
 		4520B4FF15DAD38400B81172 /* CYAKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B4B515DAD38400B81172 /* CYAKeychain.m */; };
 		4520B52015DB124200B81172 /* CPostWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4520B51E15DB124200B81172 /* CPostWindowController.m */; };
 		4520B52115DB124200B81172 /* CPostWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4520B51F15DB124200B81172 /* CPostWindowController.xib */; };
+		45AD872715DC28BA0059BBD8 /* CTimelineTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AD872615DC28BA0059BBD8 /* CTimelineTableView.m */; };
 		45BB80AA15DB759C0055EBA2 /* NSAttributedString+PostExtensins.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BB80A915DB759C0055EBA2 /* NSAttributedString+PostExtensins.m */; };
 		45DAA30E15D8B26300459C51 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA30D15D8B26300459C51 /* Cocoa.framework */; };
 		45DAA35B15D8B61E00459C51 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA35415D8B3AE00459C51 /* WebKit.framework */; };
@@ -256,6 +257,8 @@
 		4520B51D15DB124200B81172 /* CPostWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPostWindowController.h; sourceTree = "<group>"; };
 		4520B51E15DB124200B81172 /* CPostWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPostWindowController.m; sourceTree = "<group>"; };
 		4520B51F15DB124200B81172 /* CPostWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CPostWindowController.xib; sourceTree = "<group>"; };
+		45AD872515DC28BA0059BBD8 /* CTimelineTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTimelineTableView.h; sourceTree = "<group>"; };
+		45AD872615DC28BA0059BBD8 /* CTimelineTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTimelineTableView.m; sourceTree = "<group>"; };
 		45BB80A815DB759C0055EBA2 /* NSAttributedString+PostExtensins.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+PostExtensins.h"; sourceTree = "<group>"; };
 		45BB80A915DB759C0055EBA2 /* NSAttributedString+PostExtensins.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+PostExtensins.m"; sourceTree = "<group>"; };
 		45BB80AC15DB76A60055EBA2 /* 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 6.xcdatamodel; sourceTree = "<group>"; };
@@ -324,6 +327,8 @@
 				4520B2FD15DA28E500B81172 /* CTimelineViewController.h */,
 				4520B2FE15DA28E500B81172 /* CTimelineViewController.m */,
 				4520B2FF15DA28E500B81172 /* CTimelineViewController.xib */,
+				45AD872515DC28BA0059BBD8 /* CTimelineTableView.h */,
+				45AD872615DC28BA0059BBD8 /* CTimelineTableView.m */,
 				4520B51D15DB124200B81172 /* CPostWindowController.h */,
 				4520B51E15DB124200B81172 /* CPostWindowController.m */,
 				4520B51F15DB124200B81172 /* CPostWindowController.xib */,
@@ -773,6 +778,7 @@
 				451339DC15DB2F38009A1E59 /* CAsyncImageView.m in Sources */,
 				451339E015DB3012009A1E59 /* CTimelineTableCellView.m in Sources */,
 				45BB80AA15DB759C0055EBA2 /* NSAttributedString+PostExtensins.m in Sources */,
+				45AD872715DC28BA0059BBD8 /* CTimelineTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

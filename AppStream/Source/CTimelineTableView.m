@@ -10,19 +10,9 @@
 
 @implementation CTimelineTableView
 
-- (id)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
-
-- (void)drawRect:(NSRect)dirtyRect
-{
-    // Drawing code here.
-}
+//- (IBAction)reply:(id)sender
+//    {
+//    NSLog(@"REPLY");
+//    }
 
 @end

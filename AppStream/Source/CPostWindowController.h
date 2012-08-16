@@ -8,6 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class CPost;
+
 @interface CPostWindowController : NSWindowController
+
+- (id)initWithSubjectPost:(CPost *)inSubjectPost;
 
 @end

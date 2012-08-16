@@ -9,8 +9,10 @@
 #import "CPostWindowController.h"
 
 #import "CAppService.h"
+#import "CPost.h"
 
 @interface CPostWindowController ()
+@property (readwrite, nonatomic, strong) CPost *subjectPost;
 @property (readwrite, nonatomic, strong) NSString *text;
 @end
 
@@ -20,6 +22,17 @@
     {
     if ((self = [super initWithWindowNibName:NSStringFromClass([self class])]) != NULL)
         {
+        }
+    return self;
+    }
+
+- (id)initWithSubjectPost:(CPost *)inSubjectPost;
+    {
+    if ((self = [self init]) != NULL)
+        {
+        _subjectPost = inSubjectPost;
+
+        _text = @"@schwa";
         }
     return self;
     }

@@ -19,14 +19,12 @@
 @implementation CMainViewController
 
 - (id)init
-{
-    self = [super initWithNibName:NSStringFromClass([self class]) bundle:NULL];
-    if (self) {
-        // Initialization code here.
-    }
-    
+    {
+    if ((self = [super initWithNibName:NSStringFromClass([self class]) bundle:NULL]) != NULL)
+        {
+        }
     return self;
-}
+    }
 
 - (IBAction)refresh:(id)sender
     {

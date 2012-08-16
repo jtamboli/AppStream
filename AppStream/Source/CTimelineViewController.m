@@ -13,6 +13,9 @@
 #import "CTimelineTableCellView.h"
 
 @interface CTimelineViewController () <NSTableViewDelegate>
+@property (readonly, nonatomic, strong) NSPredicate *filterPredicate;
+@property (readonly, nonatomic, strong) NSArray *sortDescriptors;
+@property (readonly, nonatomic, strong) IBOutlet NSArrayController *postsArrayController;
 
 @end
 
@@ -29,10 +32,14 @@
     return self;
     }
 
-- (void)loadView;
+- (void)loadView
     {
     [super loadView];
     //
+    NSLog(@">>> %@", self.view);
+    NSLog(@">>> %@", _postsArrayController);
+    NSLog(@">>> %@", self.postsArrayController);
+
     [[CAppService sharedInstance] retrievePostsForStream:self.stream options:NULL success:NULL];
     }
 
@@ -48,6 +55,11 @@
         CTimelineTableCellView *theView = [rowView viewAtColumn:N];
         [theView reset];
         }
+    }
+
+- (IBAction)reply:(id)sender
+    {
+    NSLog(@"REPLY: %@", self.postsArrayController);
     }
 
 @end

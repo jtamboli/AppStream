@@ -13,8 +13,6 @@
 @interface CTimelineViewController : NSViewController
 
 @property (readonly, nonatomic, strong) CStream *stream;
-@property (readonly, nonatomic, strong) NSPredicate *filterPredicate;
-@property (readonly, nonatomic, strong) NSArray *sortDescriptors;
 
 - (id)initWithStream:(CStream *)inStream;
 
