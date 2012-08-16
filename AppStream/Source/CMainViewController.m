@@ -15,7 +15,8 @@
 @interface CMainViewController ()
 @property (readwrite, nonatomic, assign) IBOutlet NSTabView *tabView;
 @property (readwrite, nonatomic, assign) IBOutlet NSArrayController *arrayController;
-@property (readwrite, nonatomic, assign) NSIndexSet *selectionIndexes;
+@property (readwrite, nonatomic, strong) NSArray *viewControllers;
+@property (readwrite, nonatomic, strong) NSIndexSet *selectionIndexes;
 @end
 
 @implementation CMainViewController
@@ -57,24 +58,53 @@
         }
 
     NSArray *thePrototypes = @[
-        @{ @"name": @"Global", @"stream": [CAppService sharedInstance].globalStreamEntity },
-        @{ @"name": @"My Stream", @"stream": [CAppService sharedInstance].myStreamEntity },
-        @{ @"name": @"Mentions", @"stream": [CAppService sharedInstance].mentionsStreamEntity },
-        @{ @"name": @"My Posts", @"stream": [CAppService sharedInstance].myPostsStreamEntity },
+        @{
+            @"name": @"Global",
+            @"predicate": [NSPredicate predicateWithFormat:@"streams CONTAINS %@", [CAppService sharedInstance].globalStreamEntity],
+        },
+        @{
+            @"name": @"My Stream",
+            @"predicate": [NSPredicate predicateWithFormat:@"streams CONTAINS %@", [CAppService sharedInstance].myStreamEntity],
+        },
+        @{
+            @"name": @"Mentions",
+            @"predicate": [NSPredicate predicateWithFormat:@"streams CONTAINS %@", [CAppService sharedInstance].mentionsStreamEntity],
+        },
+        @{
+            @"name": @"My Posts",
+            @"predicate": [NSPredicate predicateWithFormat:@"streams CONTAINS %@", [CAppService sharedInstance].myPostsStreamEntity],
+        },
+        @{
+            @"name": @"Bookmarks",
+            @"predicate": [NSPredicate predicateWithFormat:@"label = 'bookmark'"],
+        },
         ];
+
+    NSMutableArray *theViewControllers = [NSMutableArray array];
 
     for (NSDictionary *thePrototype in thePrototypes)
         {
-        CTimelineViewController *theTimelineViewController = [[CTimelineViewController alloc] initWithStream:thePrototype[@"stream"]];
-        CContainerView *theContainerView = [[CContainerView alloc] initWithFrame:CGRectZero];
-        theContainerView.viewController = theTimelineViewController;
+        NSString *theName = thePrototype[@"name"];
+        NSPredicate *thePredicate = thePrototype[@"predicate"];
 
-        NSTabViewItem *theTabViewItem = [[NSTabViewItem alloc] initWithIdentifier:thePrototype[@"name"]];
-        theTabViewItem.label = thePrototype[@"name"];
+        CTimelineViewController *theTimelineViewController = [[CTimelineViewController alloc] initWithName:theName predicate:thePredicate];
+
+        [theViewControllers addObject:theTimelineViewController];
+        }
+
+    for (CTimelineViewController *theViewController in theViewControllers)
+        {
+        CContainerView *theContainerView = [[CContainerView alloc] initWithFrame:CGRectZero];
+        theContainerView.viewController = theViewController;
+
+        NSTabViewItem *theTabViewItem = [[NSTabViewItem alloc] initWithIdentifier:theViewController.name];
+        theTabViewItem.label = theViewController.name;
         theTabViewItem.view = theContainerView;
 
         [self.tabView addTabViewItem:theTabViewItem];
         }
+
+    self.viewControllers = [theViewControllers copy];
 
     }
 

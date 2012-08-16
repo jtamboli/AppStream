@@ -46,12 +46,10 @@
 				<string key="NSClassName">NSApplication</string>
 			</object>
 			<object class="NSArrayController" id="414066957">
-				<bool key="NSEditable">YES</bool>
 				<bool key="NSAutomaticallyPreparesContent">YES</bool>
 				<object class="_NSManagedProxy" key="_NSManagedProxy">
 					<string key="NSEntityName">Stream</string>
 				</object>
-				<bool key="_NSIsUsingManagedProxy">YES</bool>
 				<bool key="NSAvoidsEmptySelection">YES</bool>
 				<bool key="NSPreservesSelection">YES</bool>
 				<bool key="NSSelectsInsertedObjects">YES</bool>
@@ -364,22 +362,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">managedObjectContext: managedObjectContext</string>
-						<reference key="source" ref="414066957"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="414066957"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">managedObjectContext: managedObjectContext</string>
-							<string key="NSBinding">managedObjectContext</string>
-							<string key="NSKeyPath">managedObjectContext</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">62</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">selectionIndexes: selectionIndexes</string>
 						<reference key="source" ref="414066957"/>
 						<reference key="destination" ref="1001"/>
@@ -393,6 +375,22 @@
 						</object>
 					</object>
 					<int key="connectionID">66</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">contentArray: viewControllers</string>
+						<reference key="source" ref="414066957"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="414066957"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">contentArray: viewControllers</string>
+							<string key="NSBinding">contentArray</string>
+							<string key="NSKeyPath">viewControllers</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">88</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -473,19 +471,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: objectValue.path</string>
+						<string key="label">value: objectValue.name</string>
 						<reference key="source" ref="951381766"/>
 						<reference key="destination" ref="87590630"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="951381766"/>
 							<reference key="NSDestination" ref="87590630"/>
-							<string key="NSLabel">value: objectValue.path</string>
+							<string key="NSLabel">value: objectValue.name</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">objectValue.path</string>
+							<string key="NSKeyPath">objectValue.name</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">64</int>
+					<int key="connectionID">87</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -692,7 +690,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">86</int>
+			<int key="maxID">88</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

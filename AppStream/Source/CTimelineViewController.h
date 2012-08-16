@@ -12,8 +12,9 @@
 
 @interface CTimelineViewController : NSViewController
 
+@property (readonly, nonatomic, strong) NSString *name;
 @property (readonly, nonatomic, strong) CStream *stream;
 
-- (id)initWithStream:(CStream *)inStream;
+- (id)initWithName:(NSString *)inName predicate:(NSPredicate *)inPredicate;
 
 @end

@@ -15,6 +15,8 @@
 #import "CPostWindowController.h"
 #import "CTimelineTableView.h"
 #import "CPost.h"
+#import "NSManagedObjectContext+ObjectControllers.h"
+
 
 @interface CTimelineViewController () <NSTableViewDelegate, CTimelineTableViewDelegate>
 @property (readwrite, nonatomic, strong) NSPredicate *filterPredicate;
@@ -27,12 +29,12 @@
 
 @implementation CTimelineViewController
 
-- (id)initWithStream:(CStream *)inStream
+- (id)initWithName:(NSString *)inName predicate:(NSPredicate *)inPredicate;
     {
     if ((self = [super initWithNibName:NSStringFromClass([self class]) bundle:NULL]) != NULL)
         {
-        _stream = inStream;
-        _filterPredicate = [NSPredicate predicateWithFormat:@"streams CONTAINS %@", _stream];
+        _name = inName;
+        _filterPredicate = inPredicate;
         _sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"posted" ascending:NO] ];
         }
     return self;
@@ -41,8 +43,8 @@
 - (void)loadView
     {
     [super loadView];
-    //
-    [[CAppService sharedInstance] retrievePostsForStream:self.stream options:NULL success:NULL];
+
+    [self.managedObjectContext registerObjectController:self.postsArrayController]; // TODO unregister!
     }
 
 - (NSManagedObjectContext *)managedObjectContext
@@ -83,6 +85,9 @@
     [self.managedObjectContext performBlockAndWait:^{
         self.selectedPost.label = self.selectedPost.label.length == 0 ? @"bookmark" : NULL;
         }];
+
+
+    [self.managedObjectContext refetchObjectControllers];
     }
 
 @end

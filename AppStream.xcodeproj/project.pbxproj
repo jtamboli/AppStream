@@ -93,6 +93,7 @@
 		45BB80AA15DB759C0055EBA2 /* NSAttributedString+PostExtensins.m in Sources */ = {isa = PBXBuildFile; fileRef = 45BB80A915DB759C0055EBA2 /* NSAttributedString+PostExtensins.m */; };
 		45DAA30E15D8B26300459C51 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA30D15D8B26300459C51 /* Cocoa.framework */; };
 		45DAA35B15D8B61E00459C51 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45DAA35415D8B3AE00459C51 /* WebKit.framework */; };
+		45EFEE3715DCDF8000DBAB35 /* NSManagedObjectContext+ObjectControllers.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EFEE3615DCDF8000DBAB35 /* NSManagedObjectContext+ObjectControllers.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -274,6 +275,8 @@
 		45DAA35415D8B3AE00459C51 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		45EFEE3215DCC5D000DBAB35 /* 7.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = 7.xcdatamodel; sourceTree = "<group>"; };
 		45EFEE3415DCD76800DBAB35 /* 8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8.xcdatamodel; sourceTree = "<group>"; };
+		45EFEE3515DCDF8000DBAB35 /* NSManagedObjectContext+ObjectControllers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+ObjectControllers.h"; sourceTree = "<group>"; };
+		45EFEE3615DCDF8000DBAB35 /* NSManagedObjectContext+ObjectControllers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+ObjectControllers.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +343,8 @@
 				451339DF15DB3012009A1E59 /* CTimelineTableCellView.m */,
 				45BB80A815DB759C0055EBA2 /* NSAttributedString+PostExtensins.h */,
 				45BB80A915DB759C0055EBA2 /* NSAttributedString+PostExtensins.m */,
+				45EFEE3515DCDF8000DBAB35 /* NSManagedObjectContext+ObjectControllers.h */,
+				45EFEE3615DCDF8000DBAB35 /* NSManagedObjectContext+ObjectControllers.m */,
 				4520B30115DA28E500B81172 /* Model */,
 				4520B30615DA28E500B81172 /* Prefix.pch */,
 				4520B30715DA28E500B81172 /* Support */,
@@ -781,6 +786,7 @@
 				451339E015DB3012009A1E59 /* CTimelineTableCellView.m in Sources */,
 				45BB80AA15DB759C0055EBA2 /* NSAttributedString+PostExtensins.m in Sources */,
 				45AD872715DC28BA0059BBD8 /* CTimelineTableView.m in Sources */,
+				45EFEE3715DCDF8000DBAB35 /* NSManagedObjectContext+ObjectControllers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
