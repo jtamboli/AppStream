@@ -30,7 +30,10 @@ A minimal Mac OS X app.net client
 * Database will grow and grow. Need to prune at some point.
 * Code is being "sketched out" and is far from well designed. Expect a lot of churn/refactoring
 * <del>Refresh</del> (implemented)
+* <del>Polling</del> (implemented)
 * <del>Posting</del> (implemented)
+* <del>Replies</del> (implemented)
+* <del>User notifications</del> (implemented)
 
 ## FEATURE IDEAS
 
