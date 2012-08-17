@@ -17,4 +17,16 @@
     return([self.delegate timelineTableView:self menuForEvent:event]);
     }
 
+- (void)mouseDown:(NSEvent *)theEvent;
+    {
+    if ([theEvent clickCount] > 1)
+        {
+        [self.delegate open:self];
+        }
+    else
+        {
+        [super mouseDown:theEvent];
+        }
+    }
+
 @end

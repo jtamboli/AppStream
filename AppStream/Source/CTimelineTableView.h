@@ -15,6 +15,8 @@
 @end
 
 @protocol CTimelineTableViewDelegate
+@optional
+- (IBAction)open:(id)sender;
 @required
 - (NSMenu *)timelineTableView:(CTimelineTableView *)inTableView menuForEvent:(NSEvent *)event;
 @end
